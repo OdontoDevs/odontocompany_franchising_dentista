@@ -2,15 +2,15 @@
 
 import Navbar from "@/sections/Navbar";
 import HeroSection from "@/sections/HeroSection";
+import DorSection from "@/sections/DorSection";
+import ViradaSection from "@/sections/ViradaSection";
 import UnitsSection from "@/sections/UnitsSection";
+import MediaSection from "@/sections/MediaSection";
 import VideoSection from "@/sections/VideoSection";
-import MarketSection from "@/sections/MarketSection";
-import CompareSection from "@/sections/CompareSection";
 import BenefitsSection from "@/sections/BenefitsSection";
 import KPISection from "@/sections/KPISection";
-import RoadmapSection from "@/sections/RoadmapSection";
-import MediaSection from "@/sections/MediaSection";
 import TestimonialsSection from "@/sections/TestimonialsSection";
+import RoadmapSection from "@/sections/RoadmapSection";
 import FAQSection from "@/sections/FAQSection";
 import CtaSection from "@/sections/CtaSection";
 import Footer from "@/sections/Footer";
@@ -23,15 +23,15 @@ export default function Home() {
     <>
       <Navbar />
       <HeroSection />
+      <DorSection />
+      <ViradaSection />
       <UnitsSection />
+      <MediaSection />
       <VideoSection />
-      <MarketSection />
-      <CompareSection />
       <BenefitsSection />
       <KPISection />
-      <RoadmapSection />
-      <MediaSection />
       <TestimonialsSection />
+      <RoadmapSection />
       <FAQSection />
       <div className="cta-footer-shell">
         <CtaSection />

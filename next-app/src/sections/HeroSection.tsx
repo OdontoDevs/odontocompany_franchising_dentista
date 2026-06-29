@@ -14,7 +14,7 @@ export default function HeroSection() {
             <Gauge />
           </span>
           <div className="hero-stat__text">
-            <strong className="hero-stat__value">Operação Simplificada</strong>
+            <strong className="hero-stat__value">Qualidade de vida</strong>
           </div>
         </div>
 
@@ -23,7 +23,7 @@ export default function HeroSection() {
             <Building2 />
           </span>
           <div className="hero-stat__text">
-            <strong className="hero-stat__value">Estrutura Completa</strong>
+            <strong className="hero-stat__value">Método de gestão</strong>
           </div>
         </div>
 
@@ -32,7 +32,7 @@ export default function HeroSection() {
             <Award />
           </span>
           <div className="hero-stat__text">
-            <strong className="hero-stat__value">Autoridade de Mercado</strong>
+            <strong className="hero-stat__value">Status e reconhecimento</strong>
           </div>
         </div>
       </div>
@@ -40,11 +40,13 @@ export default function HeroSection() {
       <div className="hero-inner">
         <div className="hero-content">
           <h1 className="hero-headline animate-in delay-2">
-            Invista no <em>maior ecossistema</em> de rede de franquias
-            odontológica do Brasil
+            Você já domina a odontologia. Agora é hora de dominar{" "}
+            <em>o negócio.</em>
           </h1>
           <p className="hero-sub animate-in delay-3">
-            +1.000 unidades, modelo comprovado em 35 anos de mercado
+            Marca, método, captação e gestão para transformar experiência
+            clínica em crescimento real. Você continua sendo dentista — mas passa
+            a pensar como empresário.
           </p>
           <div className="fade-in-soft delay-4 max-w-lg mt-6 hero-ctas">
             <CtaFunnel />
@@ -55,11 +57,15 @@ export default function HeroSection() {
         <div className="hero-ticker-track">
           {Array.from({ length: 3 }).map((_, index) => (
             <div className="hero-ticker-item" key={index}>
-              <span>ESTRUTURA OPERACIONAL</span>
+              <span>MARCA FORTE E RECONHECIDA</span>
               <span className="hero-ticker-sep">·</span>
-              <span>SOLIDEZ DA MARCA</span>
+              <span>MÉTODO DE GESTÃO COMPLETO</span>
               <span className="hero-ticker-sep">·</span>
-              <span>FACILIDADE DE GESTÃO</span>
+              <span>CAPTAÇÃO PREVISÍVEL</span>
+              <span className="hero-ticker-sep">·</span>
+              <span>TERRITÓRIO EXCLUSIVO</span>
+              <span className="hero-ticker-sep">·</span>
+              <span>DA CADEIRA PARA A GESTÃO</span>
             </div>
           ))}
         </div>

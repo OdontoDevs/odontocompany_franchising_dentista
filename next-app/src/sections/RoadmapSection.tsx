@@ -22,15 +22,15 @@ type RoadmapItem = {
 };
 
 const roadmapItems: RoadmapItem[] = [
-  { step: "01", label: "Conheça o nosso projeto", icon: Monitor },
-  { step: "02", label: "COF (Circular de Oferta de Franquia)", icon: FileText },
-  { step: "03", label: "Aprovação do candidato e assinatura de contrato", icon: UserCheck },
-  { step: "04", label: "Assinatura do contrato", icon: PenLine },
-  { step: "05", label: "Escolha do imóvel e unidade clínica", icon: Building2 },
-  { step: "06", label: "Adequação técnica da unidade clínica", icon: Armchair },
-  { step: "07", label: "Universidade Corporativa", icon: GraduationCap },
-  { step: "08", label: "Inauguração da clínica", icon: ShieldCheck, highlight: true },
-  { step: "09", label: "Núcleo de Acompanhamento e Suporte", icon: BarChart3 },
+  { step: "01", label: "Perfil e conversa", icon: Monitor },
+  { step: "02", label: "COF", icon: FileText },
+  { step: "03", label: "Aprovação", icon: UserCheck },
+  { step: "04", label: "Contrato", icon: PenLine },
+  { step: "05", label: "Ponto comercial", icon: Building2 },
+  { step: "06", label: "Implantação", icon: Armchair },
+  { step: "07", label: "Treinamento", icon: GraduationCap },
+  { step: "08", label: "Inauguração", icon: ShieldCheck, highlight: true },
+  { step: "09", label: "Acompanhamento", icon: BarChart3 },
 ];
 
 const VIEW_W = 1200;
@@ -95,13 +95,16 @@ export default function RoadmapSection() {
       <div className="roadmap-print-container">
         <div className="roadmap-print-header">
           <div className="section-kicker section-kicker--light">
-            Etapas do nosso processo
+            Da intenção à inauguração
           </div>
           <h2>
-            Passo a passo para se tornar um{" "}
-            <span className="text-[#38B549]">franqueado de sucesso!</span>
+            Passo a passo para se tornar{" "}
+            <span className="text-[#38B549]">franqueado</span>
           </h2>
-          <p>É mais rápido do que você imagina.</p>
+          <p>
+            Uma jornada clara diminui insegurança e mostra que você não precisa
+            descobrir tudo sozinho. É mais rápido do que você imagina.
+          </p>
         </div>
 
         <div className="roadmap-zig" aria-label="Passo a passo para se tornar um franqueado">

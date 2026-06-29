@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OdontoCompany Franquias — Para Dentistas</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --g:#38B549;--g2:#2D7270;--g3:#4C8751;--g4:#7FC156;--g5:#A8D156;
+  --dk:#0A0F0B;--wh:#FFFFFF;--bg:#F4F6F3;--bg2:#E8EDE6;
+  --tx:#1A2E1C;--dm:#5A7060;
+  --f:'Montserrat',sans-serif;
+  --ease:cubic-bezier(.4,0,.2,1);--sp:cubic-bezier(.34,1.56,.64,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
+body{font-family:var(--f);background:var(--wh);color:var(--tx);overflow-x:hidden;line-height:1.6;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+#prog{position:fixed;top:0;left:0;height:3px;z-index:9999;background:linear-gradient(90deg,var(--g),var(--g5));width:0%;}
+
+.fade{opacity:0;transform:translateY(20px);transition:opacity .65s var(--ease),transform .65s var(--ease);}
+.fade.in{opacity:1;transform:none;}
+.fd1{transition-delay:.1s;}.fd2{transition-delay:.2s;}.fd3{transition-delay:.3s;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:64px;display:flex;align-items:center;background:rgba(255,255,255,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--bg2);box-shadow:0 2px 16px rgba(0,0,0,.06);}
+.nav-i{display:flex;align-items:center;justify-content:space-between;width:100%;gap:20px;}
+.nav-logo img{height:36px;}
+.nav-links{display:flex;align-items:center;gap:24px;}
+.nav-links a{font-size:13px;font-weight:600;color:var(--dm);transition:color .2s;}
+.nav-links a:hover{color:var(--g);}
+.nav-cta{background:var(--g);color:#fff;font-family:var(--f);font-size:13px;font-weight:700;padding:10px 24px;border-radius:99px;transition:all .22s var(--sp);border:none;cursor:pointer;letter-spacing:.01em;}
+.nav-cta:hover{background:var(--g3);transform:translateY(-2px);box-shadow:0 6px 20px rgba(56,181,73,.3);}
+
+/* ── HERO ── */
+.hero{min-height:100vh;background:var(--dk);position:relative;overflow:hidden;display:flex;align-items:center;padding-top:64px;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 65% at 65% 25%,rgba(56,181,73,.22),transparent),radial-gradient(ellipse 40% 50% at 5% 85%,rgba(45,114,112,.15),transparent);animation:bgP 8s ease-in-out infinite alternate;}
+@keyframes bgP{0%{opacity:.8;}100%{opacity:1;}}
+.hero-lines{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black,transparent);}
+.hero-circ{position:absolute;bottom:-15%;right:-5%;width:500px;height:500px;border-radius:50%;border:1px solid rgba(56,181,73,.08);pointer-events:none;}
+.hero-inner{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;align-items:center;text-align:center;padding:80px 0 64px;gap:36px;}
+.hero-top{display:flex;flex-direction:column;align-items:center;max-width:740px;}
+.hero-form-full{width:100%;max-width:860px;}
+.he-dot{width:7px;height:7px;border-radius:50%;background:var(--g);animation:blink 2s infinite;flex-shrink:0;}
+@keyframes blink{0%,100%{box-shadow:0 0 0 0 rgba(56,181,73,.5);}50%{box-shadow:0 0 0 9px transparent;}}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:9px;margin-bottom:18px;}
+.he-txt{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g5);}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(56,181,73,.1);border:1px solid rgba(56,181,73,.28);border-radius:99px;padding:6px 16px;margin-bottom:20px;font-size:12px;font-weight:700;color:var(--g4);letter-spacing:.04em;}
+.hero h1{font-size:clamp(34px,4.6vw,58px);font-weight:900;line-height:1.06;letter-spacing:-.04em;color:#fff;margin-bottom:12px;}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--g4);}
+.hero-tag2{font-size:17px;font-weight:500;color:rgba(255,255,255,.55);line-height:1.6;margin-bottom:28px;max-width:480px;}
+.hero-tag2 strong{color:rgba(255,255,255,.85);font-weight:700;}
+.hero-pills{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:32px;}
+.hp{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:rgba(255,255,255,.55);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:7px 14px;}
+.hp svg{width:13px;height:13px;stroke:var(--g4);fill:none;stroke-width:2.5;}
+
+/* FORM HERO */
+.fcard{background:rgba(255,255,255,.07);backdrop-filter:blur(32px);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:28px 36px;box-shadow:0 24px 64px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.1);position:relative;overflow:hidden;}
+.fcard::before{content:'';position:absolute;top:-40%;left:-20%;width:80%;height:80%;background:radial-gradient(ellipse,rgba(56,181,73,.08),transparent 70%);pointer-events:none;}
+.fcard-top{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px;flex-wrap:wrap;}
+.fcard-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(56,181,73,.12);border:1px solid rgba(56,181,73,.25);border-radius:99px;padding:5px 13px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--g4);}
+.fcard h3{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.02em;}
+.fcard-sub{font-size:12px;color:rgba(255,255,255,.38);}
+.fcard-row{display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:12px;align-items:end;}
+.fcard-row.s1{grid-template-columns:1fr auto;}
+.fcard-row.s2{grid-template-columns:1fr 1fr auto;}
+.fcard-row.s3{grid-template-columns:1fr 1fr auto;}
+.fcard-row.s4{grid-template-columns:1fr 1fr auto;}
+.fcard-row.s5{grid-template-columns:1fr 1fr auto;}
+.fcard-row.s6{grid-template-columns:1fr auto;}
+
+/* FORM STEPS */
+.fstep{display:none;}
+.fstep.active{display:block;animation:sIn .3s var(--ease);}
+@keyframes sIn{from{opacity:0;transform:translateX(10px);}to{opacity:1;transform:none;}}
+.step-prog{display:flex;gap:5px;margin-bottom:16px;}
+.sp{flex:1;height:3px;border-radius:99px;background:rgba(255,255,255,.1);transition:background .35s;}
+.sp.done{background:var(--g);}
+.sp.active{background:rgba(56,181,73,.5);}
+.step-lbl{font-size:11px;font-weight:700;color:rgba(255,255,255,.3);margin-bottom:8px;letter-spacing:.05em;text-transform:uppercase;}
+.fi{width:100%;padding:13px 15px;background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.12);border-radius:11px;font-family:var(--f);font-size:14px;color:#fff;outline:none;appearance:none;transition:all .2s;}
+.fi:focus{border-color:var(--g);background:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(56,181,73,.15);}
+.fi::placeholder{color:rgba(255,255,255,.22);}
+.fi option{background:#1a2e1a;color:#fff;}
+.fi-s{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='rgba(255,255,255,.35)' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center;background-size:13px;padding-right:36px;}
+.fbtn{width:100%;padding:14px;background:var(--g);color:#fff;font-family:var(--f);font-size:14px;font-weight:700;border:none;border-radius:99px;cursor:pointer;margin-top:14px;transition:all .25s var(--sp);box-shadow:0 4px 20px rgba(56,181,73,.25);}
+.fbtn:hover{background:var(--g3);transform:translateY(-2px);box-shadow:0 8px 28px rgba(56,181,73,.4);}
+.fback{font-size:12px;font-weight:600;color:rgba(255,255,255,.3);background:none;border:none;cursor:pointer;margin-top:10px;display:block;text-align:center;transition:color .2s;}
+.fback:hover{color:rgba(255,255,255,.6);}
+.flock{display:flex;align-items:center;gap:6px;justify-content:center;margin-top:12px;}
+.flock svg{width:11px;height:11px;stroke:rgba(255,255,255,.22);fill:none;}
+.flock span{font-size:11px;color:rgba(255,255,255,.22);}
+.fsuccess{text-align:center;padding:16px 0;display:none;}
+.fsuccess-icon{width:56px;height:56px;border-radius:50%;background:rgba(56,181,73,.12);border:2px solid rgba(56,181,73,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 14px;}
+.fsuccess-icon svg{width:24px;height:24px;stroke:var(--g4);fill:none;stroke-width:2.5;}
+.fsuccess h4{font-size:19px;font-weight:800;color:#fff;margin-bottom:6px;}
+.fsuccess p{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6;}
+
+/* ── TICKER ── */
+.ticker{background:var(--g);padding:0;overflow:hidden;white-space:nowrap;}
+.ticker-track{display:inline-flex;animation:tick 20s linear infinite;}
+.ticker-item{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;padding:12px 28px;opacity:.9;}
+.ticker-dot{color:rgba(255,255,255,.4);padding:12px 0;}
+@keyframes tick{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── SHARED ── */
+section{padding:96px 0;}
+.sec-label{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--g3);margin-bottom:12px;display:block;}
+.sec-title{font-size:clamp(28px,3.6vw,44px);font-weight:900;line-height:1.08;color:var(--tx);margin-bottom:14px;letter-spacing:-.03em;}
+.sec-title em{font-style:italic;color:var(--g2);font-weight:400;}
+.sec-title.lt{color:#fff;}
+.sec-title.lt em{color:var(--g4);}
+.sec-sub{font-size:16px;color:var(--dm);line-height:1.7;}
+.sec-sub.lt{color:rgba(255,255,255,.45);}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 56px;}
+.btn-g{display:inline-flex;align-items:center;gap:9px;background:var(--g);color:#fff;font-family:var(--f);font-size:14px;font-weight:700;padding:14px 30px;border-radius:99px;border:none;cursor:pointer;transition:all .25s var(--sp);box-shadow:0 4px 20px rgba(56,181,73,.3);}
+.btn-g:hover{background:var(--g3);transform:translateY(-3px);box-shadow:0 8px 28px rgba(56,181,73,.45);}
+.btn-g svg{width:13px;height:13px;flex-shrink:0;transition:transform .2s;}
+.btn-g:hover svg{transform:translateX(4px);}
+
+/* ── DOR ── */
+.dor-sec{background:var(--bg);}
+.dor-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+.dor-cards{display:flex;flex-direction:column;gap:12px;}
+.dcard{display:flex;align-items:flex-start;gap:14px;padding:18px 20px;border-radius:14px;border:1.5px solid var(--bg2);background:var(--wh);transition:all .25s var(--ease);box-shadow:0 2px 8px rgba(0,0,0,.04);}
+.dcard:hover{border-color:var(--g4);transform:translateX(6px);box-shadow:0 8px 24px rgba(56,181,73,.1);}
+.dcard-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+.ic1{background:#fff0f0;}.ic2{background:#fff5ec;}.ic3{background:#fffaec;}.ic4{background:#f0f4ff;}
+.dcard-title{font-size:14px;font-weight:700;color:var(--tx);margin-bottom:3px;}
+.dcard-desc{font-size:13px;color:var(--dm);line-height:1.55;}
+.dcard-quote{font-size:12px;color:#b04020;font-style:italic;margin-top:5px;font-weight:500;}
+.dor-text .sec-title em{color:var(--g2);}
+.dor-cta{margin-top:10px;font-size:15px;font-weight:700;color:var(--tx);font-style:italic;line-height:1.5;border-left:3px solid var(--g);padding-left:16px;}
+
+/* ── VIRADA ── */
+.virada-sec{background:var(--dk);position:relative;overflow:hidden;}
+.virada-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 75% 25%,rgba(56,181,73,.2),transparent),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(45,114,112,.15),transparent);pointer-events:none;}
+.virada-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:2;}
+.virada-steps{display:flex;flex-direction:column;gap:0;}
+.vstep{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.07);}
+.vstep:last-child{border-bottom:none;}
+.vstep-num{width:40px;height:40px;border-radius:50%;background:rgba(56,181,73,.12);border:1px solid rgba(56,181,73,.25);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--g4);flex-shrink:0;transition:all .25s;}
+.vstep:hover .vstep-num{background:var(--g);border-color:var(--g);color:#fff;box-shadow:0 0 16px rgba(56,181,73,.4);}
+.vstep-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;}
+.vstep-desc{font-size:13px;color:rgba(255,255,255,.48);line-height:1.6;}
+.virada-img{border-radius:20px;overflow:hidden;position:relative;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);aspect-ratio:4/5;display:flex;align-items:center;justify-content:center;}
+.virada-img-inner{text-align:center;padding:32px;}
+.virada-img-icon svg{width:64px;height:64px;stroke:rgba(56,181,73,.3);fill:none;stroke-width:.8;}
+.virada-img-lbl{font-size:12px;font-weight:600;color:rgba(255,255,255,.2);margin-top:16px;font-style:italic;}
+
+/* ── GALERIA ── */
+.galeria-sec{background:var(--wh);}
+.galeria-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:auto auto;gap:14px;}
+.gbox{border-radius:14px;overflow:hidden;position:relative;background:var(--bg);border:1px solid var(--bg2);aspect-ratio:4/3;transition:all .25s var(--ease);}
+.gbox:hover{transform:scale(1.02);box-shadow:0 12px 32px rgba(0,0,0,.12);}
+.gbox.large{grid-column:span 2;aspect-ratio:16/9;}
+.gbox img{width:100%;height:100%;object-fit:cover;}
+.gbox-ph{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:linear-gradient(135deg,rgba(56,181,73,.08),rgba(45,114,112,.05));}
+.gbox-ph svg{width:32px;height:32px;stroke:var(--g3);fill:none;stroke-width:1.2;opacity:.5;}
+.gbox-ph span{font-size:11px;font-weight:600;color:var(--dm);}
+.gbox-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,11,.7),transparent 55%);display:flex;align-items:flex-end;padding:16px;opacity:0;transition:opacity .25s;}
+.gbox:hover .gbox-ov{opacity:1;}
+.gbox-ov span{font-size:12px;font-weight:600;color:#fff;}
+
+/* ── MÍDIA ── */
+.midia-sec{background:var(--dk);position:relative;overflow:hidden;}
+.midia-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 55% 65% at 75% 30%,rgba(56,181,73,.18),transparent);pointer-events:none;}
+.midia-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2;}
+.midia-videos{display:flex;flex-direction:column;gap:14px;}
+.mvid{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;overflow:hidden;transition:all .25s;}
+.mvid:hover{border-color:rgba(56,181,73,.3);box-shadow:0 0 24px rgba(56,181,73,.1);}
+.mvid video{width:100%;display:block;border-radius:14px;}
+.mvid-label{padding:10px 14px;font-size:11px;font-weight:600;color:rgba(255,255,255,.38);letter-spacing:.04em;}
+.imprensa{margin-top:32px;}
+.imprensa-lbl{font-size:11px;font-weight:600;color:rgba(255,255,255,.3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px;}
+.imprensa-logos{display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.imprensa-logos img{height:22px;opacity:.35;filter:brightness(10);transition:opacity .2s;}
+.imprensa-logos img:hover{opacity:.6;}
+
+/* ── VÍDEOS FUNDADOR ── */
+.vids-sec{background:var(--bg);}
+.vids-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.vid-card{background:var(--wh);border:1px solid var(--bg2);border-radius:16px;overflow:hidden;transition:all .25s var(--ease);box-shadow:0 2px 12px rgba(0,0,0,.04);}
+.vid-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1);}
+.vid-thumb{aspect-ratio:16/9;background:linear-gradient(135deg,rgba(45,114,112,.15),rgba(56,181,73,.08));display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;}
+.vid-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(56,181,73,.1),transparent);}
+.vid-play{width:52px;height:52px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;transition:all .25s var(--sp);box-shadow:0 6px 20px rgba(56,181,73,.3);}
+.vid-play:hover{transform:scale(1.1);}
+.vid-play svg{width:20px;height:20px;fill:#fff;margin-left:3px;}
+.vid-info{padding:16px 18px;}
+.vid-duration{font-size:11px;font-weight:700;color:var(--g3);letter-spacing:.04em;margin-bottom:4px;}
+.vid-title{font-size:14px;font-weight:700;color:var(--tx);line-height:1.4;}
+
+/* ── MERCADO ── */
+.mercado-sec{background:var(--wh);}
+.mercado-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.mercado-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.mstat{background:var(--bg);border:1px solid var(--bg2);border-radius:14px;padding:22px;transition:all .25s;}
+.mstat:hover{border-color:var(--g4);box-shadow:0 8px 24px rgba(56,181,73,.1);}
+.mstat-v{font-size:28px;font-weight:900;color:var(--g);letter-spacing:-.03em;margin-bottom:5px;}
+.mstat-l{font-size:13px;color:var(--dm);line-height:1.4;}
+
+/* ── TABELA COMPARATIVA ── */
+.tabela-sec{background:var(--bg);}
+.tabela-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--bg2);box-shadow:0 4px 20px rgba(0,0,0,.06);}
+table{width:100%;border-collapse:collapse;min-width:700px;}
+thead{background:var(--g);}
+thead th{padding:16px 18px;font-size:12px;font-weight:700;color:#fff;text-align:left;letter-spacing:.04em;}
+thead th:first-child{border-radius:16px 0 0 0;}
+thead th:last-child{border-radius:0 16px 0 0;}
+tbody tr{border-bottom:1px solid var(--bg2);}
+tbody tr:last-child{border-bottom:none;}
+tbody td{padding:14px 18px;font-size:13px;color:var(--tx);}
+tbody td:first-child{font-weight:600;color:var(--dm);}
+tbody tr td:nth-child(2){background:rgba(56,181,73,.06);font-weight:700;color:var(--g2);}
+tbody tr:hover{background:rgba(56,181,73,.03);}
+.td-badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;padding:3px 10px;border-radius:99px;background:rgba(56,181,73,.1);color:var(--g3);}
+tfoot td{padding:12px 18px;font-size:11px;color:#bbb;font-style:italic;border-top:1px solid var(--bg2);}
+
+/* ── MÉTODO ── */
+.metodo-sec{background:var(--wh);}
+.metodo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.mcard{background:var(--bg);border:1px solid var(--bg2);border-radius:16px;padding:26px;transition:all .25s var(--ease);position:relative;overflow:hidden;}
+.mcard::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g2),var(--g));transform:scaleX(0);transform-origin:left;transition:transform .3s;}
+.mcard:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
+.mcard:hover::after{transform:scaleX(1);}
+.mcard-num{font-size:36px;font-weight:900;color:var(--bg2);line-height:1;margin-bottom:12px;letter-spacing:-.04em;}
+.mcard-title{font-size:15px;font-weight:700;color:var(--tx);margin-bottom:7px;}
+.mcard-desc{font-size:13px;color:var(--dm);line-height:1.65;}
+
+/* ── NÚMEROS ── */
+.nums-sec{background:var(--dk);position:relative;overflow:hidden;}
+.nums-sec::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 70% 30%,rgba(56,181,73,.2),transparent),radial-gradient(ellipse 40% 50% at 10% 80%,rgba(45,114,112,.12),transparent);pointer-events:none;}
+.nums-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;position:relative;z-index:2;}
+.nbox{padding:36px 28px;text-align:center;border-right:1px solid rgba(255,255,255,.08);transition:background .2s;}
+.nbox:hover{background:rgba(56,181,73,.06);}
+.nbox:last-child{border-right:none;}
+.nbox-v{font-size:38px;font-weight:900;color:var(--g5);line-height:1;margin-bottom:8px;letter-spacing:-.03em;}
+.nbox-l{font-size:12px;font-weight:600;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px;}
+.nbox-h{font-size:11px;color:rgba(255,255,255,.2);font-style:italic;}
+.nums-extras{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:20px;position:relative;z-index:2;}
+.ne{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px 20px;display:flex;align-items:flex-start;gap:12px;}
+.ne-dot{width:8px;height:8px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:6px;}
+.ne-txt{font-size:13px;color:rgba(255,255,255,.5);line-height:1.5;}
+.ne-txt strong{color:rgba(255,255,255,.85);font-weight:700;}
+
+/* ── DEPOIMENTOS ── */
+.depo-sec{background:var(--bg);}
+.depo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.dc{background:var(--wh);border:1px solid var(--bg2);border-radius:16px;padding:24px;display:flex;flex-direction:column;gap:14px;transition:all .28s var(--ease);box-shadow:0 2px 12px rgba(0,0,0,.04);}
+.dc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1);}
+.dc.hi{background:var(--dk);border-color:rgba(56,181,73,.2);}
+.dc-stars{display:flex;gap:3px;margin-bottom:2px;}
+.dc-stars svg{width:13px;height:13px;fill:#f5a623;stroke:none;}
+.dc-q{font-size:14px;color:var(--dm);line-height:1.65;flex:1;font-style:italic;}
+.dc.hi .dc-q{color:rgba(255,255,255,.58);}
+.dc-top{display:flex;align-items:center;gap:11px;margin-top:4px;}
+.dc-av{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--g2),var(--g));display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;}
+.dc.hi .dc-av{background:linear-gradient(135deg,var(--g5),var(--g4));color:var(--dk);}
+.dc-name{font-size:13px;font-weight:700;color:var(--tx);}
+.dc.hi .dc-name{color:#fff;}
+.dc-role{font-size:11px;color:var(--dm);}
+.dc.hi .dc-role{color:rgba(255,255,255,.3);}
+
+/* ── PASSO A PASSO ── */
+.passos-sec{background:var(--wh);}
+.passos-track{display:grid;grid-template-columns:repeat(9,1fr);gap:0;position:relative;margin-bottom:32px;}
+.passos-track::before{content:'';position:absolute;top:20px;left:20px;right:20px;height:2px;background:linear-gradient(90deg,var(--g),var(--g4));z-index:0;}
+.pstep{display:flex;flex-direction:column;align-items:center;gap:12px;position:relative;z-index:1;}
+.pstep-num{width:40px;height:40px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;flex-shrink:0;box-shadow:0 4px 12px rgba(56,181,73,.3);transition:all .25s var(--sp);}
+.pstep:hover .pstep-num{transform:scale(1.15);box-shadow:0 6px 20px rgba(56,181,73,.45);}
+.pstep-lbl{font-size:11px;font-weight:600;color:var(--dm);text-align:center;line-height:1.35;}
+
+/* ── FAQ ── */
+.faq-sec{background:var(--bg);}
+.faq-layout{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:start;}
+.faq-sticky{position:sticky;top:80px;}
+.faq-aside{background:var(--dk);border-radius:16px;padding:28px;margin-top:24px;}
+.faq-aside h4{font-size:19px;font-weight:800;color:#fff;margin-bottom:6px;letter-spacing:-.02em;}
+.faq-aside p{font-size:13px;color:rgba(255,255,255,.42);line-height:1.6;margin-bottom:18px;}
+.faq-aside-btn{width:100%;padding:13px;background:var(--g);color:#fff;font-family:var(--f);font-size:14px;font-weight:700;border:none;border-radius:99px;cursor:pointer;transition:all .22s var(--sp);}
+.faq-aside-btn:hover{background:var(--g3);box-shadow:0 6px 20px rgba(56,181,73,.3);}
+.faq-list{display:flex;flex-direction:column;gap:6px;}
+.faq-item{background:var(--wh);border:1px solid var(--bg2);border-radius:12px;overflow:hidden;transition:border-color .2s;}
+.faq-item.open{border-color:rgba(56,181,73,.3);}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:17px 20px;cursor:pointer;transition:background .2s;}
+.faq-q:hover{background:var(--bg);}
+.faq-q.open{background:rgba(56,181,73,.05);}
+.faq-q-txt{font-size:14px;font-weight:600;color:var(--tx);line-height:1.4;}
+.faq-chev{width:24px;height:24px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .25s;}
+.faq-chev svg{width:10px;height:10px;stroke:var(--g2);transition:transform .25s;}
+.faq-item.open .faq-chev{background:var(--g);}
+.faq-item.open .faq-chev svg{stroke:#fff;transform:rotate(180deg);}
+.faq-body{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+.faq-item.open .faq-body{max-height:300px;}
+.faq-body-in{padding:0 20px 20px;font-size:14px;color:var(--dm);line-height:1.75;}
+.faq-body-in strong{color:var(--tx);font-weight:700;}
+
+/* ── CTA FINAL ── */
+.cta-sec{background:var(--dk);padding:100px 0;position:relative;overflow:hidden;}
+.cta-sec::before{content:'';position:absolute;top:-20%;right:-8%;width:55%;height:80%;background:radial-gradient(ellipse,rgba(56,181,73,.18),transparent 70%);pointer-events:none;}
+.cta-sec::after{content:'';position:absolute;bottom:-10%;left:-5%;width:40%;height:60%;background:radial-gradient(ellipse,rgba(45,114,112,.1),transparent 70%);pointer-events:none;}
+.cta-grid{display:grid;grid-template-columns:1fr 420px;gap:56px;align-items:center;position:relative;z-index:2;}
+.cta-title{font-size:clamp(28px,4vw,48px);font-weight:900;color:#fff;line-height:1.07;margin-bottom:14px;letter-spacing:-.03em;}
+.cta-title em{font-style:italic;color:var(--g4);font-weight:400;}
+.cta-p{font-size:15px;color:rgba(255,255,255,.44);line-height:1.7;margin-bottom:24px;}
+.cta-urg{display:flex;align-items:flex-start;gap:11px;padding:14px 16px;background:rgba(56,181,73,.07);border:1px solid rgba(56,181,73,.14);border-radius:10px;margin-bottom:24px;}
+.urg-dot{width:8px;height:8px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:5px;animation:blink 2s infinite;}
+.urg-txt{font-size:13px;color:rgba(255,255,255,.5);line-height:1.55;}
+.urg-txt strong{color:var(--g5);}
+.cta-chk{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.44);margin-bottom:10px;}
+.cta-chk::before{content:'';width:20px;height:20px;border-radius:50%;flex-shrink:0;background:rgba(56,181,73,.14) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2338B549' stroke-width='3'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center/10px;border:1px solid rgba(56,181,73,.22);}
+
+footer{background:#070c08;border-top:1px solid rgba(255,255,255,.05);padding:28px 0;}
+.foot-i{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;}
+.foot-brand{font-size:14px;font-weight:900;color:rgba(255,255,255,.25);}
+.foot-legal{font-size:11px;color:rgba(255,255,255,.16);line-height:1.65;max-width:520px;}
+
+/* ── CARROSSEL ── */
+.carousel-wrap{position:relative;overflow:hidden;margin-top:0;}
+.carousel-track{display:flex;transition:transform .5s var(--ease);}
+.cslide{min-width:100%;aspect-ratio:16/7;position:relative;flex-shrink:0;}
+.cslide img{width:100%;height:100%;object-fit:cover;display:block;}
+.cslide-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,11,.6),transparent 50%);display:flex;align-items:flex-end;padding:28px 40px;}
+.cslide-ov span{font-size:14px;font-weight:600;color:rgba(255,255,255,.8);}
+.carousel-btn{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;font-size:22px;font-weight:700;color:var(--g2);transition:all .22s;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,.2);}
+.carousel-btn:hover{background:#fff;box-shadow:0 6px 24px rgba(0,0,0,.3);}
+.carousel-prev{left:20px;}
+.carousel-next{right:20px;}
+.carousel-dots{display:flex;justify-content:center;gap:8px;padding:18px 0;background:var(--wh);}
+.cdot{width:8px;height:8px;border-radius:50%;background:var(--bg2);cursor:pointer;transition:all .25s;}
+.cdot.active{background:var(--g);transform:scale(1.3);}
+
+/* ── DEPO VÍDEO ── */
+.dvid-card{background:var(--wh);border:1px solid var(--bg2);border-radius:20px;padding:14px;display:flex;flex-direction:column;gap:10px;transition:all .28s var(--ease);box-shadow:0 2px 12px rgba(0,0,0,.04);width:185px;flex-shrink:0;}
+.dvid-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1);}
+.dvid-card.hi{background:var(--dk);border-color:rgba(56,181,73,.2);}
+.dvid-thumb{
+  width:100%;aspect-ratio:9/16;border-radius:14px;
+  background:linear-gradient(160deg,rgba(45,114,112,.35),rgba(10,15,11,.9));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;position:relative;overflow:hidden;cursor:pointer;
+  border:1px solid rgba(56,181,73,.18);
+  transition:all .28s var(--ease);
+}
+.dvid-thumb:hover{border-color:rgba(56,181,73,.4);box-shadow:0 0 32px rgba(56,181,73,.15);}
+.dvid-thumb::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 70% at 50% 40%,rgba(56,181,73,.1),transparent);pointer-events:none;}
+.dvid-ring{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:42px;height:42px;border-radius:50%;border:2px solid var(--g4);box-shadow:0 0 0 3px rgba(56,181,73,.18);animation:ringP 3s ease-in-out infinite;}
+@keyframes ringP{0%,100%{box-shadow:0 0 0 3px rgba(56,181,73,.18);}50%{box-shadow:0 0 0 6px rgba(56,181,73,.08);}}
+.dvid-av{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--g2),var(--g));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:#fff;position:absolute;top:13px;left:50%;transform:translateX(-50%);z-index:2;}
+.dvid-play{width:40px;height:40px;border-radius:50%;background:rgba(56,181,73,.9);display:flex;align-items:center;justify-content:center;transition:all .25s var(--sp);box-shadow:0 0 0 8px rgba(56,181,73,.12),0 0 0 16px rgba(56,181,73,.06);animation:gp 3s ease-in-out infinite;margin-top:36px;}
+@keyframes gp{0%,100%{box-shadow:0 0 0 8px rgba(56,181,73,.12),0 0 0 16px rgba(56,181,73,.06);}50%{box-shadow:0 0 0 12px rgba(56,181,73,.16),0 0 0 22px rgba(56,181,73,.07);}}
+.dvid-play:hover{transform:scale(1.12);background:var(--g);}
+.dvid-play svg{width:16px;height:16px;fill:#fff;margin-left:3px;}
+.dvid-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.4);letter-spacing:.05em;text-transform:uppercase;}
+.dvid-player{aspect-ratio:9/16;border-radius:14px;overflow:hidden;}
+.dvid-info{display:flex;flex-direction:column;gap:2px;}
+.dvid-name{font-size:12px;font-weight:700;color:var(--tx);}
+.dvid-card.hi .dvid-name{color:#fff;}
+.dvid-role{font-size:10px;font-weight:600;color:var(--dm);text-transform:uppercase;letter-spacing:.05em;}
+.dvid-card.hi .dvid-role{color:rgba(255,255,255,.3);}
+.dvid-note{font-size:10px;color:#bbb;font-style:italic;text-align:center;}
+.depo-grid{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;}
+
+/* ── MAPA + CTA 2 COLUNAS ── */
+.cta-inner-grid{display:grid;grid-template-columns:1fr 400px;gap:40px;align-items:start;position:relative;z-index:2;}
+.cta-left{display:flex;flex-direction:column;gap:0;}
+.mapa-wrap{margin-bottom:0;}
+.mapa-box{
+  height:380px;border-radius:18px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.1);
+  position:relative;
+}
+/* SVG Brasil decorativo */
+.mapa-svg-wrap{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+.mapa-svg-wrap svg{width:100%;height:100%;opacity:.25;}
+.mapa-placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px;background:linear-gradient(135deg,rgba(45,114,112,.3),rgba(10,15,11,.85));}
+.mapa-label{font-size:14px;font-weight:700;color:rgba(255,255,255,.45);margin-bottom:6px;}
+.mapa-sublabel{font-size:11px;color:rgba(255,255,255,.2);font-style:italic;}
+.mapa-pin{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--g);box-shadow:0 0 0 3px rgba(56,181,73,.25),0 0 8px rgba(56,181,73,.4);transform:translate(-50%,-50%);animation:pinP 3s ease-in-out infinite;}
+@keyframes pinP{0%,100%{transform:translate(-50%,-50%) scale(1);}50%{transform:translate(-50%,-50%) scale(1.35);}}
+.mapa-legenda{position:absolute;bottom:14px;left:16px;display:flex;gap:14px;background:rgba(10,15,11,.8);backdrop-filter:blur(8px);padding:7px 13px;border-radius:99px;border:1px solid rgba(255,255,255,.1);}
+.mapa-leg-item{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:600;color:rgba(255,255,255,.5);}
+.mapa-leg-dot{width:8px;height:8px;border-radius:50%;background:var(--g);flex-shrink:0;}
+.cta-form-wrap{margin-top:0;}
+
+
+  .metodo-grid,.depo-grid,.vids-grid{grid-template-columns:1fr;}
+  .galeria-grid{grid-template-columns:1fr 1fr;}.gbox.large{grid-column:span 2;}
+  .nums-grid{grid-template-columns:1fr 1fr;}.nums-extras{grid-template-columns:1fr;}
+  .passos-track{grid-template-columns:repeat(3,1fr);gap:20px;}.passos-track::before{display:none;}
+  .faq-sticky{position:static;}
+}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<!-- NAV -->
+<nav>
+  <div class="wrap">
+    <div class="nav-i">
+      <div class="nav-logo">
+        <img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/logo_odontocompany%20(2).svg" alt="OdontoCompany" onerror="this.style.display='none';this.nextSibling.style.display='block'">
+        <span style="display:none;font-size:17px;font-weight:900;color:var(--tx);">Odonto<span style="color:var(--g)">Company</span></span>
+      </div>
+      <div class="nav-links">
+        <a href="#vantagens">Vantagens</a>
+        <a href="#numeros">Números</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#faq">Dúvidas</a>
+      </div>
+      <button class="nav-cta" onclick="go('cta')">Quero crescer com método →</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-circ"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+
+      <!-- HEADLINE CENTRALIZADA -->
+      <div class="hero-top fade">
+        <div class="hero-eyebrow"><div class="he-dot"></div><span class="he-txt">Exclusivo para dentistas</span></div>
+        <div class="hero-tag">✦ OdontoCompany Franquias · Para Dentistas</div>
+        <h1>Você já domina<br>a odontologia.<br>Agora é hora de dominar<br><em>o negócio.</em></h1>
+        <p class="hero-tag2">
+          Marca, método, captação e gestão para transformar
+          <strong>experiência clínica em crescimento real.</strong>
+          Você continua sendo dentista — mas passa a pensar como empresário.
+        </p>
+        <div class="hero-pills">
+          <div class="hp"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Qualidade de vida</div>
+          <div class="hp"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Método de gestão</div>
+          <div class="hp"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Status e reconhecimento</div>
+          <div class="hp"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Previsibilidade financeira</div>
+        </div>
+      </div>
+
+      <!-- FORM HORIZONTAL FULL-WIDTH -->
+      <div class="fcard hero-form-full fade fd1" id="cta-hero">
+        <div class="fcard-top">
+          <div>
+            <h3>Receba seu plano de negócio personalizado</h3>
+            <div class="fcard-sub">Resposta em até 2 horas úteis · Sem compromisso</div>
+          </div>
+          <div class="fcard-badge">✦ Plano gratuito</div>
+        </div>
+        <div class="step-prog" style="margin-bottom:16px;">
+          <div class="sp active" id="sp1"></div><div class="sp" id="sp2"></div>
+          <div class="sp" id="sp3"></div><div class="sp" id="sp4"></div>
+          <div class="sp" id="sp5"></div><div class="sp" id="sp6"></div>
+        </div>
+
+        <div class="fstep active" id="fs1">
+          <div class="step-lbl" style="text-align:left;">Passo 1 de 6 · Como você se chama?</div>
+          <div class="fcard-row s1">
+            <input class="fi" id="fn" type="text" placeholder="Nome completo" onkeydown="if(event.key==='Enter')fNext(2)">
+            <button class="fbtn" style="width:auto;padding:13px 28px;" onclick="fNext(2)">Próximo →</button>
+          </div>
+        </div>
+
+        <div class="fstep" id="fs2">
+          <div class="step-lbl" style="text-align:left;">Passo 2 de 6 · Contato</div>
+          <div class="fcard-row s2">
+            <input class="fi" id="fwp" type="tel" placeholder="WhatsApp com DDD" onkeydown="if(event.key==='Enter')document.getElementById('fe').focus()">
+            <input class="fi" id="fe" type="email" placeholder="Melhor e-mail" onkeydown="if(event.key==='Enter')fNext(3)">
+            <button class="fbtn" style="width:auto;padding:13px 28px;" onclick="fNext(3)">Próximo →</button>
+          </div>
+          <button class="fback" style="text-align:left;margin-top:8px;" onclick="fGo(1)">← Voltar</button>
+        </div>
+
+        <div class="fstep" id="fs3">
+          <div class="step-lbl" style="text-align:left;">Passo 3 de 6 · Sua especialidade</div>
+          <div class="fcard-row s3">
+            <select class="fi fi-s" id="fesp">
+              <option value="" disabled selected>Especialidade</option>
+              <option>Clínico Geral</option><option>Ortodontia</option>
+              <option>Implante e Prótese</option><option>Endodontia</option><option>Outra</option>
+            </select>
+            <input class="fi" id="fanos" type="text" placeholder="Anos de formado">
+            <button class="fbtn" style="width:auto;padding:13px 28px;" onclick="fNext(4)">Próximo →</button>
+          </div>
+          <button class="fback" style="text-align:left;margin-top:8px;" onclick="fGo(2)">← Voltar</button>
+        </div>
+
+        <div class="fstep" id="fs4">
+          <div class="step-lbl" style="text-align:left;">Passo 4 de 6 · Sua cidade de interesse</div>
+          <div class="fcard-row s4">
+            <input class="fi" id="fc" type="text" placeholder="Cidade de interesse" onkeydown="if(event.key==='Enter')fNext(5)">
+            <select class="fi fi-s" id="fest">
+              <option value="" disabled selected>Estado</option>
+              <option>SP</option><option>RJ</option><option>MG</option><option>PR</option>
+              <option>RS</option><option>SC</option><option>BA</option><option>GO</option><option>Outro</option>
+            </select>
+            <button class="fbtn" style="width:auto;padding:13px 28px;" onclick="fNext(5)">Próximo →</button>
+          </div>
+          <button class="fback" style="text-align:left;margin-top:8px;" onclick="fGo(3)">← Voltar</button>
+        </div>
+
+        <div class="fstep" id="fs5">
+          <div class="step-lbl" style="text-align:left;">Passo 5 de 6 · Já tem clínica própria?</div>
+          <div class="fcard-row s5">
+            <select class="fi fi-s" id="fclinica">
+              <option value="" disabled selected>Tem clínica atualmente?</option>
+              <option>Sim, clínica própria</option>
+              <option>Sim, sócio em clínica</option>
+              <option>Não tenho clínica</option>
+            </select>
+            <select class="fi fi-s" id="fprazo">
+              <option value="" disabled selected>Prazo para abrir</option>
+              <option>Até 3 meses</option><option>3 a 6 meses</option>
+              <option>6 a 12 meses</option><option>Pesquisando</option>
+            </select>
+            <button class="fbtn" style="width:auto;padding:13px 28px;" onclick="fNext(6)">Próximo →</button>
+          </div>
+          <button class="fback" style="text-align:left;margin-top:8px;" onclick="fGo(4)">← Voltar</button>
+        </div>
+
+        <div class="fstep" id="fs6">
+          <div class="step-lbl" style="text-align:left;">Passo 6 de 6 · Confirmação</div>
+          <div class="fcard-row s6" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 18px;">
+            <div id="fconfirm" style="font-size:13px;color:rgba(255,255,255,.6);display:flex;flex-wrap:wrap;gap:12px;"></div>
+            <button class="fbtn" style="width:auto;padding:13px 28px;background:linear-gradient(135deg,var(--g2),var(--g));white-space:nowrap;" onclick="fSubmit()">✦ Receber plano de negócio</button>
+          </div>
+          <button class="fback" style="text-align:left;margin-top:8px;" onclick="fGo(5)">← Editar dados</button>
+        </div>
+
+        <div class="fsuccess" id="fsuccess">
+          <div class="fsuccess-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <h4>Plano enviado!</h4>
+          <p>Em até 2 horas úteis nosso time entra em contato com o plano de negócio personalizado para a sua cidade.</p>
+        </div>
+        <div class="flock" style="margin-top:14px;">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Dados protegidos · Sem compromisso · Resposta em até 2h</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Marca forte e reconhecida</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Método de gestão completo</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Captação previsível</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Qualidade de vida</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Território exclusivo</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Da cadeira para a gestão</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Marca forte e reconhecida</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Método de gestão completo</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Captação previsível</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Qualidade de vida</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Território exclusivo</span><span class="ticker-dot">·</span>
+    <span class="ticker-item">Da cadeira para a gestão</span><span class="ticker-dot">·</span>
+  </div>
+</div>
+
+<!-- ══ DOR ══ -->
+<section class="dor-sec" id="vantagens">
+  <div class="wrap">
+    <div class="dor-grid">
+      <div class="fade">
+        <span class="sec-label">O limite de crescer sozinho</span>
+        <h2 class="sec-title">Agenda cheia.<br>Técnica apurada.<br><em>E ainda assim travado?</em></h2>
+        <p class="sec-sub" style="margin-bottom:24px;">
+          Muitos dentistas têm reputação e pacientes. Mas falta método para transformar a clínica em negócio.
+        </p>
+        <div class="dor-cta">
+          A pergunta não é: como atender mais?<br>
+          A pergunta é: <strong>como crescer melhor, com método, marca e time?</strong>
+        </div>
+        <button class="btn-g" onclick="go('cta')" style="margin-top:28px;">
+          Quero sair do operacional com método
+          <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="dor-cards fade fd1">
+        <div class="dcard"><div class="dcard-icon ic1">😤</div><div><div class="dcard-title">Agenda cheia, sem liberdade</div><div class="dcard-desc">Mais pacientes, mais horas, mais cansaço — sem necessariamente mais crescimento.</div><div class="dcard-quote">"Trabalho mais e não avanço mais."</div></div></div>
+        <div class="dcard"><div class="dcard-icon ic2">📉</div><div><div class="dcard-title">Captação incerta</div><div class="dcard-desc">Depender de indicação ou impulso de marketing sem processo previsível.</div><div class="dcard-quote">"Não sei de onde vai vir o próximo paciente."</div></div></div>
+        <div class="dcard"><div class="dcard-icon ic3">🏗️</div><div><div class="dcard-title">Gestão pesada e solitária</div><div class="dcard-desc">Equipe, vendas, financeiro e atendimento competindo com o tempo clínico.</div><div class="dcard-quote">"Virei gestor sem querer, e sem suporte."</div></div></div>
+        <div class="dcard"><div class="dcard-icon ic4">🔒</div><div><div class="dcard-title">Crescimento travado</div><div class="dcard-desc">A clínica depende demais da sua cadeira e da sua presença para funcionar.</div><div class="dcard-quote">"Se eu parar, tudo para junto."</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VIRADA ══ -->
+<section class="virada-sec">
+  <div class="wrap">
+    <div class="virada-grid">
+      <div class="fade">
+        <span class="sec-label" style="color:var(--g5);">A virada</span>
+        <h2 class="sec-title lt">Da cadeira<br><em>para a gestão</em></h2>
+        <p class="sec-sub lt" style="margin-bottom:32px;">A ideia não é abandonar a odontologia. É deixar de depender apenas da sua cadeira para crescer. Você continua sendo dentista — mas passa a pensar como empresário.</p>
+        <div class="virada-steps">
+          <div class="vstep"><div class="vstep-num">1</div><div><div class="vstep-title">Dentista experiente</div><div class="vstep-desc">Você já construiu conhecimento técnico e reputação sólida no mercado.</div></div></div>
+          <div class="vstep"><div class="vstep-num">2</div><div><div class="vstep-title">Dono de clínica</div><div class="vstep-desc">Agora precisa de processo, time e gestão para crescer com estrutura.</div></div></div>
+          <div class="vstep"><div class="vstep-num">3</div><div><div class="vstep-title">Gestor de operação</div><div class="vstep-desc">A clínica passa a girar com indicadores e método independente da sua presença.</div></div></div>
+          <div class="vstep"><div class="vstep-num">4</div><div><div class="vstep-title">Referência local</div><div class="vstep-desc">Crescimento com marca forte e percepção de valor no seu mercado.</div></div></div>
+        </div>
+      </div>
+      <div class="virada-img fade fd1">
+        <div class="virada-img-inner">
+          <div class="virada-img-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8.5 2 5 5 5 9c0 2 .8 3.8 2 5l2 6c.3.8 1 1 1 1h4s.7-.2 1-1l2-6c1.2-1.2 2-3 2-5 0-4-3.5-7-7-7z"/></svg></div>
+          <div class="virada-img-lbl">Inserir foto do dentista em clínica moderna · pós-produção</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CARROSSEL CLÍNICAS ══ -->
+<section class="galeria-sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <span class="sec-label">Conheça nossas unidades</span>
+      <h2 class="sec-title">O modelo de clínica que<br><em>virou referência</em></h2>
+      <p class="sec-sub">Estrutura completa, design clean e tecnologia pronta para atrair pacientes desde o dia 1.</p>
+    </div>
+  </div>
+  <div class="carousel-wrap fade">
+    <div class="carousel-track" id="carouselTrack">
+      <div class="cslide"><img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/ODC_01.png" alt="Clínica OdontoCompany" loading="lazy"><div class="cslide-ov"><span>Recepção · Padrão da rede</span></div></div>
+      <div class="cslide"><img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/ODC_02.jpeg" alt="Clínica OdontoCompany" loading="lazy"><div class="cslide-ov"><span>Área clínica completa</span></div></div>
+      <div class="cslide"><img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/ODC_03.jpg" alt="Clínica OdontoCompany" loading="lazy"><div class="cslide-ov"><span>Sala de atendimento</span></div></div>
+      <div class="cslide"><img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/ODC_04.jpg" alt="Clínica OdontoCompany" loading="lazy"><div class="cslide-ov"><span>Tecnologia de gestão</span></div></div>
+      <div class="cslide"><img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/ODC_05.jpg" alt="Clínica OdontoCompany" loading="lazy"><div class="cslide-ov"><span>Design moderno</span></div></div>
+      <div class="cslide"><img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/ODC_06.jpg" alt="Clínica OdontoCompany" loading="lazy"><div class="cslide-ov"><span>Estrutura completa</span></div></div>
+      <div class="cslide"><img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/ODC_07.png" alt="Clínica OdontoCompany" loading="lazy"><div class="cslide-ov"><span>Unidade em operação</span></div></div>
+    </div>
+    <button class="carousel-btn carousel-prev" onclick="cSlide(-1)">&#8249;</button>
+    <button class="carousel-btn carousel-next" onclick="cSlide(1)">&#8250;</button>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+<!-- ══ O PODER DA MÍDIA ══ -->
+<section class="midia-sec">
+  <div class="wrap">
+    <div class="midia-grid">
+      <div class="fade">
+        <span class="sec-label" style="color:var(--g5);">O poder da mídia</span>
+        <h2 class="sec-title lt">Sua clínica na TV aberta<br><em>antes de abrir</em></h2>
+        <p class="sec-sub lt" style="margin-bottom:28px;">Nenhum outro franqueado no setor odontológico tem esse diferencial. Enquanto concorrentes locais pagam por anúncio, seus pacientes já ouviram falar da OdontoCompany na TV.</p>
+        <p style="font-size:14px;color:rgba(255,255,255,.4);margin-bottom:24px;">A OdontoCompany está presente na TV aberta e no dia a dia das pessoas, impactando milhões de brasileiros com ações de merchandising e publicidade nos principais canais.</p>
+        <div class="imprensa">
+          <div class="imprensa-lbl">Veja o que a imprensa já falou</div>
+          <div class="imprensa-logos">
+            <img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/logos/exame-logo-0.png" alt="Exame">
+            <img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/logos/ABF_LOGO2023.png" alt="ABF">
+            <img src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/logos/Terra_Logo.png" alt="Terra">
+          </div>
+        </div>
+      </div>
+      <div class="midia-videos fade fd1">
+        <div class="mvid">
+          <video controls preload="none">
+            <source src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/video_ratinho.mp4" type="video/mp4">
+          </video>
+          <div class="mvid-label">Programa do Ratinho · SBT</div>
+        </div>
+        <div class="mvid">
+          <video controls preload="none">
+            <source src="https://pub-db8ed4fb33634589a6ce5fb07e85cb46.r2.dev/landingpage_odc_franchising/video_patricia_abravanel.mp4" type="video/mp4">
+          </video>
+          <div class="mvid-label">Patrícia Abravanel · SBT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VÍDEOS FUNDADOR ══ -->
+<section class="vids-sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <span class="sec-label">Para você, dentista</span>
+      <h2 class="sec-title">Conheça por dentro<br><em>a OdontoCompany</em></h2>
+      <p class="sec-sub">O fundador Dr. Paulo Zahr preparou um recado exclusivo para você. Em poucos minutos você entende o modelo, o suporte e o que esperar do processo.</p>
+    </div>
+    <div class="vids-grid">
+      <div class="vid-card fade">
+        <div class="vid-thumb"><div class="vid-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-info"><div class="vid-duration">3:42 · Assista agora</div><div class="vid-title">Como funciona a franquia OdontoCompany</div></div>
+      </div>
+      <div class="vid-card fade fd1">
+        <div class="vid-thumb"><div class="vid-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-info"><div class="vid-duration">4:10 · Expansão e modelo</div><div class="vid-title">O modelo de negócio e o suporte na prática</div></div>
+      </div>
+      <div class="vid-card fade fd2">
+        <div class="vid-thumb"><div class="vid-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div></div>
+        <div class="vid-info"><div class="vid-duration">2:58 · Tour pela clínica</div><div class="vid-title">Por dentro de uma unidade OdontoCompany</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ MÉTODO ══ -->
+<section class="metodo-sec" id="vantagens2">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <span class="sec-label">O que você recebe</span>
+      <h2 class="sec-title">O método por trás<br><em>da clínica</em></h2>
+      <p class="sec-sub">A diferença entre uma clínica independente e uma franquia está no suporte para o que o dentista geralmente não aprendeu a fazer sozinho.</p>
+    </div>
+    <div class="metodo-grid">
+      <div class="mcard fade"><div class="mcard-num">01</div><div class="mcard-title">Captação previsível</div><div class="mcard-desc">Estratégias de marketing e geração de demanda com o poder da maior rede odontológica do Brasil. Agenda cheia desde o primeiro mês.</div></div>
+      <div class="mcard fade fd1"><div class="mcard-num">02</div><div class="mcard-title">Processo comercial</div><div class="mcard-desc">Processos para atendimento, venda e conversão. Sua equipe sabe exatamente como transformar consulta em tratamento.</div></div>
+      <div class="mcard fade fd2"><div class="mcard-num">03</div><div class="mcard-title">Treinamento completo</div><div class="mcard-desc">Equipe mais preparada para operar o padrão da rede com a Universidade Corporativa OdontoCompany.</div></div>
+      <div class="mcard fade"><div class="mcard-num">04</div><div class="mcard-title">Gestão com indicadores</div><div class="mcard-desc">Indicadores para acompanhar performance e rotina. Você tem visibilidade do negócio em tempo real.</div></div>
+      <div class="mcard fade fd1"><div class="mcard-num">05</div><div class="mcard-title">Tecnologia integrada</div><div class="mcard-desc">Ferramentas para controle e operação. CRM, agendamento digital e a plataforma Minha OdontoCompany.</div></div>
+      <div class="mcard fade fd2"><div class="mcard-num">06</div><div class="mcard-title">Marca nacional</div><div class="mcard-desc">Percepção nacional aplicada ao mercado local. TV aberta, redes sociais e campanhas de performance trabalhando pela sua clínica.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NÚMEROS ══ -->
+<section class="nums-sec" id="numeros">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <span class="sec-label" style="color:var(--g5);">Números que ajudam a decidir</span>
+      <h2 class="sec-title lt">Os números da<br><em>sua futura clínica</em></h2>
+      <p class="sec-sub lt">Projeções baseadas na média da rede. Para o dentista, o número não deve vir sozinho — ele responde como o modelo ajuda a sair do operacional e construir uma clínica mais profissionalizada.</p>
+    </div>
+    <div class="nums-grid fade">
+      <div class="nbox"><div class="nbox-v">R$ 450k</div><div class="nbox-l">Investimento inicial</div><div class="nbox-h">taxa + obra + equipamentos + giro</div></div>
+      <div class="nbox"><div class="nbox-v">R$ 1,4M</div><div class="nbox-l">Faturamento médio/ano</div><div class="nbox-h">R$ 60k a R$ 120k por mês</div></div>
+      <div class="nbox"><div class="nbox-v">20–25%</div><div class="nbox-l">Lucratividade média</div><div class="nbox-h">após maturação da unidade</div></div>
+      <div class="nbox"><div class="nbox-v">24 meses</div><div class="nbox-l">Prazo médio de retorno</div><div class="nbox-h">equilíbrio a partir do 6º mês</div></div>
+    </div>
+    <div class="nums-extras fade fd1">
+      <div class="ne"><div class="ne-dot"></div><div class="ne-txt">Ponto de equilíbrio a partir do <strong>6º mês</strong> de operação</div></div>
+      <div class="ne"><div class="ne-dot"></div><div class="ne-txt"><strong>60% dos franqueados</strong> possuem mais de uma unidade</div></div>
+      <div class="ne"><div class="ne-dot"></div><div class="ne-txt">Modelos para <strong>diferentes portes de cidade</strong>, médias e capitais</div></div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <button class="btn-g" onclick="go('cta')">Quero crescer com método <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DEPOIMENTOS ══ -->
+<section class="depo-sec" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <span class="sec-label">Franqueados reais</span>
+      <h2 class="sec-title">Histórias de quem<br><em>já deu o passo</em></h2>
+      <p class="sec-sub">Ouça diretamente de quem abriu uma OdontoCompany e não voltou atrás.</p>
+    </div>
+    <div class="depo-grid">
+
+      <div class="dvid-card fade">
+        <div class="dvid-thumb" id="dv1" onclick="playDepo(1,'DEPO_VIDEO_ID_1')">
+          <div class="dvid-ring"></div>
+          <div class="dvid-av">TA</div>
+          <div class="dvid-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <div class="dvid-lbl">▶ Assistir depoimento</div>
+        </div>
+        <div class="dvid-player" id="dp1" style="display:none;">
+          <iframe frameborder="0" allowfullscreen allow="autoplay" style="width:100%;height:100%;border-radius:18px;"></iframe>
+        </div>
+        <div class="dvid-info">
+          <div class="dvid-name">Dr. Thiago Ambrozio</div>
+          <div class="dvid-role">Dentista empreendedor · 3 unidades</div>
+        </div>
+        <div class="dvid-note">* Vídeo inserido em pós-produção</div>
+      </div>
+
+      <div class="dvid-card hi fade fd1">
+        <div class="dvid-thumb" id="dv2" onclick="playDepo(2,'DEPO_VIDEO_ID_2')" style="border-color:rgba(168,209,86,.3);">
+          <div class="dvid-ring" style="border-color:var(--g5);box-shadow:0 0 0 3px rgba(168,209,86,.18);"></div>
+          <div class="dvid-av" style="background:linear-gradient(135deg,var(--g5),var(--g4));color:var(--dk);">AO</div>
+          <div class="dvid-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <div class="dvid-lbl">▶ Assistir depoimento</div>
+        </div>
+        <div class="dvid-player" id="dp2" style="display:none;">
+          <iframe frameborder="0" allowfullscreen allow="autoplay" style="width:100%;height:100%;border-radius:18px;"></iframe>
+        </div>
+        <div class="dvid-info">
+          <div class="dvid-name">Adriana Onoda</div>
+          <div class="dvid-role">Empreendedora e franqueada</div>
+        </div>
+        <div class="dvid-note">* Vídeo inserido em pós-produção</div>
+      </div>
+
+      <div class="dvid-card fade fd2">
+        <div class="dvid-thumb" id="dv3" onclick="playDepo(3,'DEPO_VIDEO_ID_3')">
+          <div class="dvid-ring"></div>
+          <div class="dvid-av">JP</div>
+          <div class="dvid-play"><svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+          <div class="dvid-lbl">▶ Assistir depoimento</div>
+        </div>
+        <div class="dvid-player" id="dp3" style="display:none;">
+          <iframe frameborder="0" allowfullscreen allow="autoplay" style="width:100%;height:100%;border-radius:18px;"></iframe>
+        </div>
+        <div class="dvid-info">
+          <div class="dvid-name">João Paulo, Rebecca e Leandro</div>
+          <div class="dvid-role">Multifranqueados · 9 unidades</div>
+        </div>
+        <div class="dvid-note">* Vídeo inserido em pós-produção</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PASSO A PASSO ══ -->
+<section class="passos-sec">
+  <div class="wrap">
+    <div class="sec-head fade">
+      <span class="sec-label">Da intenção à inauguração</span>
+      <h2 class="sec-title">Passo a passo para se<br><em>tornar franqueado</em></h2>
+      <p class="sec-sub">Uma jornada clara diminui insegurança e mostra que você não precisa descobrir tudo sozinho. É mais rápido do que você imagina.</p>
+    </div>
+    <div class="passos-track fade">
+      <div class="pstep"><div class="pstep-num">1</div><div class="pstep-lbl">Perfil e conversa</div></div>
+      <div class="pstep"><div class="pstep-num">2</div><div class="pstep-lbl">COF</div></div>
+      <div class="pstep"><div class="pstep-num">3</div><div class="pstep-lbl">Aprovação</div></div>
+      <div class="pstep"><div class="pstep-num">4</div><div class="pstep-lbl">Contrato</div></div>
+      <div class="pstep"><div class="pstep-num">5</div><div class="pstep-lbl">Ponto comercial</div></div>
+      <div class="pstep"><div class="pstep-num">6</div><div class="pstep-lbl">Implantação</div></div>
+      <div class="pstep"><div class="pstep-num">7</div><div class="pstep-lbl">Treinamento</div></div>
+      <div class="pstep"><div class="pstep-num">8</div><div class="pstep-lbl">Inauguração</div></div>
+      <div class="pstep"><div class="pstep-num">9</div><div class="pstep-lbl">Acompanhamento</div></div>
+    </div>
+    <div style="text-align:center;margin-top:28px;">
+      <button class="btn-g" onclick="go('cta')">Quero sair do operacional com método <svg fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section class="faq-sec" id="faq">
+  <div class="wrap">
+    <div class="faq-layout">
+      <div class="faq-sticky fade">
+        <span class="sec-label">Dúvidas frequentes</span>
+        <h2 class="sec-title" style="font-size:clamp(24px,2.8vw,34px);">Tem dúvidas?<br><em>Temos as respostas.</em></h2>
+        <p class="sec-sub" style="font-size:14px;">Perguntas comuns de quem está avaliando o modelo de franquia para dentistas.</p>
+        <div class="faq-aside">
+          <h4>Ainda com dúvidas?</h4>
+          <p>Fale diretamente com um consultor de expansão. Sem compromisso.</p>
+          <button class="faq-aside-btn">Falar com um consultor agora →</button>
+        </div>
+      </div>
+      <div class="faq-list fade fd1">
+        <div class="faq-item open">
+          <div class="faq-q open" onclick="faqToggle(this)"><span class="faq-q-txt">Posso continuar clinicando depois de abrir a franquia?</span><div class="faq-chev"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+          <div class="faq-body"><div class="faq-body-in">Sim. O modelo foi criado para que a clínica funcione <strong>independentemente da sua presença no operacional</strong>, mas você pode clinicar quantos dias quiser. Vários dentistas franqueados atendem de 1 a 3 dias por semana enquanto gerenciam o negócio.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faqToggle(this)"><span class="faq-q-txt">Preciso ser o responsável técnico da clínica?</span><div class="faq-chev"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+          <div class="faq-body"><div class="faq-body-in">Não é obrigatório, mas é uma opção que reduz custos. Dentistas que assumem a responsabilidade técnica economizam esse custo mensal. Caso prefira não assumir, a OdontoCompany apoia na seleção do profissional ideal.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faqToggle(this)"><span class="faq-q-txt">Já tenho uma clínica. Posso virar franqueado mesmo assim?</span><div class="faq-chev"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+          <div class="faq-body"><div class="faq-body-in">Sim. O caminho mais comum é abrir a OdontoCompany como unidade adicional — você mantém a clínica atual e abre a franquia em paralelo. Em alguns casos, a conversão da clínica existente também é avaliada.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faqToggle(this)"><span class="faq-q-txt">O investimento de R$ 450k precisa estar disponível de uma vez?</span><div class="faq-chev"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+          <div class="faq-body"><div class="faq-body-in">Não. O investimento é desembolsado em etapas — taxa de franquia, obra, equipamentos e capital de giro acontecem em momentos diferentes. Existem também <strong>parceiros financeiros homologados</strong> que podem financiar parte do investimento.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faqToggle(this)"><span class="faq-q-txt">Quais especialidades a clínica atende?</span><div class="faq-chev"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+          <div class="faq-body"><div class="faq-body-in">A OdontoCompany é clínica geral com foco em procedimentos de alto ticket: <strong>implantes dentários</strong> (mais de 100 mil por ano na rede), ortodontia, prótese, clareamento e estética.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faqToggle(this)"><span class="faq-q-txt">Quanto tempo da assinatura até a inauguração?</span><div class="faq-chev"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+          <div class="faq-body"><div class="faq-body-in">Em média <strong>4 a 6 meses</strong>, contemplando escolha do ponto, execução das obras, entrega dos equipamentos e treinamento da equipe.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faqToggle(this)"><span class="faq-q-txt">Como a OdontoCompany garante que minha agenda estará cheia?</span><div class="faq-chev"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+          <div class="faq-body"><div class="faq-body-in">Por meio do <strong>método exclusivo de captação</strong>: campanhas no Google e Meta, BOT no WhatsApp para agendamento automático, TV aberta, rádio e mídia local. O investimento é coletivo — mais de 1.000 clínicas contribuindo para uma verba que nenhuma clínica solo conseguiria sozinha.</div></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="faqToggle(this)"><span class="faq-q-txt">Qual o passo a passo para se tornar franqueado?</span><div class="faq-chev"><svg fill="none" stroke-width="2.5" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></div></div>
+          <div class="faq-body"><div class="faq-body-in"><strong>1.</strong> Preencha o formulário e receba o plano de negócio em até 2h. <strong>2.</strong> Reunião com consultor de expansão. <strong>3.</strong> Visita a uma unidade em operação. <strong>4.</strong> Aprovação e assinatura com território exclusivo garantido. <strong>5.</strong> Implantação com suporte completo até a inauguração e além.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL — TERRITÓRIO + MAPA ══ -->
+<section class="cta-sec" id="cta">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:40px;" class="fade">
+      <span class="sec-label" style="color:var(--g5);display:block;margin-bottom:10px;">Disponibilidade</span>
+      <h2 class="cta-title">Temos territórios disponíveis<br>na sua cidade. <em>Consulte agora.</em></h2>
+    </div>
+    <div class="cta-inner-grid fade fd1">
+
+      <!-- COLUNA ESQUERDA: HEADLINE + MAPA -->
+      <div class="cta-left">
+        <p style="font-size:15px;color:rgba(255,255,255,.44);line-height:1.7;margin-bottom:24px;">Verifique se o território da sua cidade ainda está disponível. Uma vez fechado, não reabre.</p>
+        <div class="mapa-wrap">
+          <div class="mapa-box">
+            <!-- SVG mapa do Brasil simplificado -->
+            <div class="mapa-svg-wrap">
+              <svg viewBox="0 0 500 520" xmlns="http://www.w3.org/2000/svg" fill="rgba(56,181,73,.15)" stroke="rgba(56,181,73,.3)" stroke-width="1.5">
+                <path d="M180,20 L200,18 L230,22 L260,30 L280,28 L300,35 L320,40 L340,55 L355,70 L360,90 L370,110 L380,130 L390,155 L395,175 L400,195 L405,215 L400,235 L410,255 L415,275 L410,295 L405,315 L395,330 L385,345 L370,355 L360,370 L345,380 L330,390 L315,400 L300,410 L285,420 L270,430 L255,440 L240,450 L225,460 L210,455 L195,445 L180,435 L165,425 L150,415 L135,405 L120,395 L108,380 L100,365 L95,348 L90,330 L88,312 L85,295 L90,278 L88,260 L85,242 L90,225 L88,208 L90,190 L95,172 L100,155 L108,138 L115,122 L122,106 L130,90 L140,75 L150,60 L160,45 L170,32 Z"/>
+                <path d="M85,295 L75,300 L65,308 L58,320 L55,335 L58,350 L65,360 L75,368 L88,370 L90,355 L88,340 L88,320 L85,295 Z" opacity=".7"/>
+                <path d="M300,35 L320,25 L340,20 L360,22 L375,30 L380,45 L370,55 L355,60 L340,55 L320,40 Z" opacity=".6"/>
+              </svg>
+            </div>
+            <div class="mapa-placeholder">
+              <svg viewBox="0 0 24 24" style="width:40px;height:40px;stroke:rgba(56,181,73,.45);fill:none;stroke-width:1.2;margin-bottom:14px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div class="mapa-label">Mapa de unidades OdontoCompany</div>
+              <div class="mapa-sublabel">Inserir Google Maps com marcadores das unidades em pós-produção</div>
+            </div>
+            <!-- Pinos no Brasil -->
+            <div class="mapa-pin" style="top:55%;left:62%;" title="São Paulo"></div>
+            <div class="mapa-pin" style="top:48%;left:66%;" title="Rio de Janeiro"></div>
+            <div class="mapa-pin" style="top:42%;left:58%;" title="Belo Horizonte"></div>
+            <div class="mapa-pin" style="top:62%;left:57%;" title="Curitiba"></div>
+            <div class="mapa-pin" style="top:68%;left:54%;" title="Porto Alegre"></div>
+            <div class="mapa-pin" style="top:35%;left:60%;" title="Brasília"></div>
+            <div class="mapa-pin" style="top:28%;left:68%;" title="Salvador"></div>
+            <div class="mapa-pin" style="top:22%;left:65%;" title="Recife"></div>
+            <div class="mapa-pin" style="top:18%;left:55%;" title="Fortaleza"></div>
+            <div class="mapa-pin" style="top:38%;left:46%;" title="Goiânia"></div>
+            <div class="mapa-pin" style="top:45%;left:52%;" title="Campo Grande"></div>
+            <div class="mapa-pin" style="top:30%;left:48%;" title="Cuiabá"></div>
+            <div class="mapa-legenda">
+              <div class="mapa-leg-item"><span class="mapa-leg-dot"></span>Unidades ativas</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- COLUNA DIREITA: FORM -->
+      <div class="cta-form-wrap">
+        <div class="fcard">
+          <div class="fcard-top">
+            <div>
+              <h3>Verificar disponibilidade</h3>
+              <div class="fcard-sub">Receba o plano no WhatsApp em até 2h</div>
+            </div>
+            <div class="fcard-badge">✦ Sem compromisso</div>
+          </div>
+          <div class="step-prog" style="margin-bottom:16px;">
+            <div class="sp active" id="csp1"></div><div class="sp" id="csp2"></div>
+            <div class="sp" id="csp3"></div><div class="sp" id="csp4"></div>
+            <div class="sp" id="csp5"></div><div class="sp" id="csp6"></div>
+          </div>
+          <div class="fstep active" id="cfs1">
+            <div class="step-lbl" style="text-align:left;">Passo 1 de 6 · Nome</div>
+            <input class="fi" id="cfn" type="text" placeholder="Nome completo" onkeydown="if(event.key==='Enter')cfNext(2)">
+            <button class="fbtn" onclick="cfNext(2)">Próximo →</button>
+          </div>
+          <div class="fstep" id="cfs2">
+            <div class="step-lbl" style="text-align:left;">Passo 2 de 6 · WhatsApp e e-mail</div>
+            <input class="fi" id="cfwp" type="tel" placeholder="WhatsApp com DDD" style="margin-bottom:10px;">
+            <input class="fi" id="cfe" type="email" placeholder="Melhor e-mail" onkeydown="if(event.key==='Enter')cfNext(3)">
+            <button class="fbtn" onclick="cfNext(3)">Próximo →</button>
+            <button class="fback" style="text-align:left;margin-top:8px;" onclick="cfGo(2)">← Voltar</button>
+          </div>
+          <div class="fstep" id="cfs3">
+            <div class="step-lbl" style="text-align:left;">Passo 3 de 6 · Especialidade</div>
+            <select class="fi fi-s" id="cfesp" style="margin-bottom:10px;">
+              <option value="" disabled selected>Especialidade</option>
+              <option>Clínico Geral</option><option>Ortodontia</option>
+              <option>Implante e Prótese</option><option>Endodontia</option><option>Outra</option>
+            </select>
+            <input class="fi" id="cfanos" type="text" placeholder="Anos de formado" onkeydown="if(event.key==='Enter')cfNext(4)">
+            <button class="fbtn" onclick="cfNext(4)">Próximo →</button>
+            <button class="fback" style="text-align:left;margin-top:8px;" onclick="cfGo(3)">← Voltar</button>
+          </div>
+          <div class="fstep" id="cfs4">
+            <div class="step-lbl" style="text-align:left;">Passo 4 de 6 · Cidade</div>
+            <input class="fi" id="cfc" type="text" placeholder="Cidade de interesse" style="margin-bottom:10px;" onkeydown="if(event.key==='Enter')cfNext(5)">
+            <select class="fi fi-s" id="cfest">
+              <option value="" disabled selected>Estado</option>
+              <option>SP</option><option>RJ</option><option>MG</option><option>PR</option>
+              <option>RS</option><option>SC</option><option>BA</option><option>GO</option><option>Outro</option>
+            </select>
+            <button class="fbtn" onclick="cfNext(5)">Próximo →</button>
+            <button class="fback" style="text-align:left;margin-top:8px;" onclick="cfGo(4)">← Voltar</button>
+          </div>
+          <div class="fstep" id="cfs5">
+            <div class="step-lbl" style="text-align:left;">Passo 5 de 6 · Perfil atual</div>
+            <select class="fi fi-s" id="cfclinica" style="margin-bottom:10px;">
+              <option value="" disabled selected>Tem clínica atualmente?</option>
+              <option>Sim, clínica própria</option>
+              <option>Sim, sócio em clínica</option>
+              <option>Não tenho clínica</option>
+            </select>
+            <select class="fi fi-s" id="cfprazo" onkeydown="if(event.key==='Enter')cfNext(6)">
+              <option value="" disabled selected>Prazo para abrir</option>
+              <option>Até 3 meses</option><option>3 a 6 meses</option>
+              <option>6 a 12 meses</option><option>Pesquisando</option>
+            </select>
+            <button class="fbtn" onclick="cfNext(6)">Próximo →</button>
+            <button class="fback" style="text-align:left;margin-top:8px;" onclick="cfGo(5)">← Voltar</button>
+          </div>
+          <div class="fstep" id="cfs6">
+            <div class="step-lbl" style="text-align:left;">Passo 6 de 6 · Confirmação</div>
+            <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px;margin-bottom:12px;">
+              <div id="cfconfirm" style="font-size:13px;color:rgba(255,255,255,.6);display:flex;flex-wrap:wrap;gap:8px;"></div>
+            </div>
+            <button class="fbtn" style="background:linear-gradient(135deg,var(--g2),var(--g));" onclick="cfSubmit()">✦ Verificar disponibilidade na minha cidade</button>
+            <button class="fback" style="text-align:left;margin-top:8px;" onclick="cfGo(5)">← Editar dados</button>
+          </div>
+          <div class="fsuccess" id="cfsuccess">
+            <div class="fsuccess-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <h4>Plano enviado!</h4>
+            <p>Em até 2 horas nosso time entra em contato com o plano personalizado para a sua cidade.</p>
+          </div>
+          <div class="flock" style="margin-top:14px;">
+            <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Dados protegidos · Sem compromisso</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-i">
+      <div class="foot-brand">OdontoCompany Franquias</div>
+      <div class="foot-legal">ODONTOCOMPANY FRANCHISING S.A. · CNPJ 12.817.681/0001-64 · Av. Ibirapuera, 2332 — Torre I — Indianópolis — São Paulo/SP · CEP 04028-900<br>*Valores referenciais baseados na média da rede. Resultados variam conforme mercado, localização e gestão do franqueado. Metodologia OdontoCompany Franchising.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  const s=document.documentElement;
+  document.getElementById('prog').style.width=((s.scrollTop/(s.scrollHeight-s.clientHeight))*100)+'%';
+});
+const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('in');io.unobserve(el.target);}});},{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>io.observe(el));
+function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});}
+
+/* CARROSSEL */
+let cIdx=0;
+const slides=document.querySelectorAll('.cslide');
+const dotsWrap=document.getElementById('carouselDots');
+slides.forEach((_,i)=>{const d=document.createElement('div');d.className='cdot'+(i===0?' active':'');d.onclick=()=>cSet(i);dotsWrap.appendChild(d);});
+function cSet(n){cIdx=n;document.getElementById('carouselTrack').style.transform=`translateX(-${n*100}%)`;document.querySelectorAll('.cdot').forEach((d,i)=>d.classList.toggle('active',i===n));}
+function cSlide(dir){cSet((cIdx+dir+slides.length)%slides.length);}
+setInterval(()=>cSlide(1),5000);
+
+/* DEPOIMENTOS VÍDEO */
+function playDepo(n,videoId){
+  document.getElementById('dv'+n).style.display='none';
+  const p=document.getElementById('dp'+n);
+  p.style.display='block';
+  p.querySelector('iframe').src=`https://www.youtube.com/embed/${videoId}?autoplay=1`;
+}
+
+/* FORM HERO */
+function fProg(n,pfx){
+  for(let i=1;i<=6;i++){
+    const el=document.getElementById(pfx+'sp'+i);
+    if(!el)continue;
+    el.classList.remove('active','done');
+    if(i<n)el.classList.add('done');
+    if(i===n)el.classList.add('active');
+  }
+}
+function fGo(n){
+  document.querySelectorAll('#cta-hero .fstep').forEach(s=>s.classList.remove('active'));
+  document.getElementById('fs'+n)?.classList.add('active');
+  fProg(n,'');
+}
+function fNext(n){
+  if(n===2&&!document.getElementById('fn').value.trim()){document.getElementById('fn').focus();return;}
+  if(n===3&&!document.getElementById('fwp').value.trim()){document.getElementById('fwp').focus();return;}
+  if(n===6){
+    const c=document.getElementById('fconfirm');
+    c.innerHTML=[
+      document.getElementById('fn').value,
+      document.getElementById('fwp').value,
+      document.getElementById('fesp').value,
+      document.getElementById('fc').value
+    ].filter(Boolean).map(v=>`<span style="background:rgba(56,181,73,.1);border:1px solid rgba(56,181,73,.2);border-radius:99px;padding:3px 10px;">${v}</span>`).join('');
+  }
+  fGo(n);
+}
+function fSubmit(){
+  document.querySelectorAll('#cta-hero .fstep').forEach(s=>s.classList.remove('active'));
+  document.getElementById('fsuccess').style.display='block';
+}
+
+/* FORM CTA */
+function cfGo(n){
+  document.querySelectorAll('#cta .fstep').forEach(s=>s.classList.remove('active'));
+  document.getElementById('cfs'+n)?.classList.add('active');
+  fProg(n,'c');
+}
+function cfNext(n){
+  if(n===2&&!document.getElementById('cfn').value.trim()){document.getElementById('cfn').focus();return;}
+  if(n===3&&!document.getElementById('cfwp').value.trim()){document.getElementById('cfwp').focus();return;}
+  if(n===6){
+    const c=document.getElementById('cfconfirm');
+    c.innerHTML=[
+      document.getElementById('cfn').value,
+      document.getElementById('cfwp').value,
+      document.getElementById('cfesp').value,
+      document.getElementById('cfc').value
+    ].filter(Boolean).map(v=>`<span style="background:rgba(56,181,73,.1);border:1px solid rgba(56,181,73,.2);border-radius:99px;padding:3px 10px;">${v}</span>`).join('');
+  }
+  cfGo(n);
+}
+function cfSubmit(){
+  document.querySelectorAll('#cta .fstep').forEach(s=>s.classList.remove('active'));
+  document.getElementById('cfsuccess').style.display='block';
+}
+
+/* FAQ */
+function faqToggle(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').classList.remove('open');});
+  if(!isOpen){item.classList.add('open');el.classList.add('open');}
+}
+</script>
+</body>
+</html>

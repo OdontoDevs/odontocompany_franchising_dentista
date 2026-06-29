@@ -13,8 +13,8 @@ export default function UnitsSection() {
           O modelo de clínica que virou <span className="mkt-highlight">referência</span>
         </h2>
         <p className="mkt-body units-subtitle">
-          Veja por dentro uma unidade OdontoCompany com estrutura completa, design
-          clean e tecnologia pronta para atrair pacientes desde o dia 1.
+          Estrutura completa, design clean e tecnologia pronta para atrair
+          pacientes desde o dia 1.
         </p>
         <ClinicCarousel />
       </div>

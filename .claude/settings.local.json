@@ -38,7 +38,8 @@
       "Bash(npx next *)",
       "Bash('C:\\\\Users\\\\rudyb/.claude/skills/gstack/browse/dist/browse' goto *)",
       "Bash('C:\\\\Users\\\\rudyb/.claude/skills/gstack/browse/dist/browse' js *)",
-      "Bash('C:\\\\Users\\\\rudyb/.claude/skills/gstack/browse/dist/browse' screenshot *)"
+      "Bash('C:\\\\Users\\\\rudyb/.claude/skills/gstack/browse/dist/browse' screenshot *)",
+      "PowerShell(cd \"d:\\\\QÓZT\\\\PROJETOS IA\\\\LANDING PAGE\\\\OdontoCompany Franchising - Copia\\\\next-app\"; npx tsc --noEmit; \"EXIT: $LASTEXITCODE\")"
     ]
   }
 }

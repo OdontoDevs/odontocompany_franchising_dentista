@@ -5,15 +5,15 @@ export default function MediaSection() {
     <section className="media-section-redesign" id="midia">
       <div className="media-inner">
         <div className="media-header">
-          <div className="section-kicker section-kicker--light">Poder de mídia</div>
+          <div className="section-kicker section-kicker--light">O poder da mídia</div>
           <h2 className="media-title">
-            Sua franquia no horário{" "}
-            <em className="italic-teal">nobre da TV aberta</em>
+            Sua clínica na TV aberta{" "}
+            <em className="italic-teal">antes de abrir</em>
           </h2>
           <p className="media-sub">
             Nenhum outro franqueado no setor odontológico tem esse diferencial.
-            Enquanto seus concorrentes locais pagam por anúncio, seus pacientes
-            já ouviram sobre a OdontoCompany na TV.
+            Enquanto concorrentes locais pagam por anúncio, seus pacientes já
+            ouviram falar da OdontoCompany na TV.
           </p>
         </div>
 
@@ -34,18 +34,9 @@ export default function MediaSection() {
             A presença da marca onde o Brasil assiste, escuta e compartilha.
           </h3>
           <p className="media-content-sub">
-            A OdontoCompany busca estar presente na TV aberta e no dia a dia
-            das pessoas, impactando milhões de brasileiros em todo o país.
-          </p>
-          <p className="media-content-sub">
-            Nossa marca se destaca com ações de merchandising e publicidade
-            nos principais canais, integrando TV, redes sociais e campanhas
-            de performance.
-          </p>
-          <p className="media-content-sub">
-            Atuamos em novelas, filmes publicitários, intervalos comerciais,
-            programas de auditório, jornalismo, reality shows, esportes,
-            matinais, shows e eventos com exibição nacional.
+            A OdontoCompany está presente na TV aberta e no dia a dia das
+            pessoas, impactando milhões de brasileiros com ações de
+            merchandising e publicidade nos principais canais.
           </p>
           <button
             className="media-box-btn"
@@ -53,11 +44,11 @@ export default function MediaSection() {
               document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Quero ser um franqueado
+            Quero crescer com método
           </button>
 
           <div className="media-press-box">
-            <p className="media-press-title">Veja o que a imprensa já falou sobre a OdontoCompany :</p>
+            <p className="media-press-title">Veja o que a imprensa já falou</p>
             <div className="media-press-logos">
               <a href="https://exame.com/negocios/franquias-com-receita-recorrente-conheca-20-negocios-com-fluxo-continuo-de-faturamento/" target="_blank" rel="noopener noreferrer" className="media-press-link">
                 <img src="https://logo.clearbit.com/exame.com?size=200" alt="Exame" className="media-press-logo" />

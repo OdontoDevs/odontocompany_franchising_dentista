@@ -9,14 +9,16 @@ export default function CtaSection() {
       <div className="container">
         <div className="cta-inner">
           <div className="cta-copy-glass cta-copy-glass--light">
+            <div className="section-kicker section-kicker--dark" style={{ textAlign: "left" }}>
+              Disponibilidade
+            </div>
             <h2 className="cta-title">
-              Territórios disponíveis na sua cidade,{" "}
-              <em>consulte antes que feche</em>
+              Temos territórios disponíveis na sua cidade.{" "}
+              <em>Consulte agora.</em>
             </h2>
             <p className="cta-sub">
-              A OdontoCompany limita o número de unidades por território para
-              proteger o negócio de cada franqueado. Verifique a disponibilidade
-              da sua cidade agora.
+              Verifique se o território da sua cidade ainda está disponível. Uma
+              vez fechado, não reabre.
             </p>
             <div className="cta-urgency">
               <div className="urgency-dot" />

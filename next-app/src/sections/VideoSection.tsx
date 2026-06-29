@@ -38,7 +38,7 @@ export default function VideoSection() {
     <section className="video-section" id="video">
       <div className="container">
         <div className="section-kicker section-kicker--dark video-section-kicker">
-          Conheça por dentro
+          Para você, dentista
         </div>
 
         {/* Título + subtítulo centralizados no topo */}
@@ -47,15 +47,15 @@ export default function VideoSection() {
           style={{ marginInline: "auto", marginBottom: "72px" }}
         >
           <h2 className="video-headline">
-            Veja como funciona <em>na prática</em> antes de decidir
+            Conheça por dentro <em>a OdontoCompany</em>
           </h2>
           <p
             className="video-sub max-w-2xl"
             style={{ marginInline: "auto", marginBottom: 0 }}
           >
-            Nosso time de expansão preparou um recado exclusivo para você,
-            investidor. Em poucos minutos, você entende o modelo, o suporte e o
-            que esperar do processo de abertura.
+            O fundador Dr. Paulo Zahr preparou um recado exclusivo para você. Em
+            poucos minutos você entende o modelo, o suporte e o que esperar do
+            processo.
           </p>
         </div>
       </div>

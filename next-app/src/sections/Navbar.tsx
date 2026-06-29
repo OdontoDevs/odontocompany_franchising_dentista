@@ -33,7 +33,7 @@ export default function Navbar() {
           </div>
 
           <a href="#cta" className="nav-cta">
-            Quero investir &rarr;
+            Quero crescer com método &rarr;
           </a>
 
           <button
@@ -66,7 +66,7 @@ export default function Navbar() {
                 href="#cta"
                 onClick={() => setIsOpen(false)}
               >
-                Quero investir
+                Quero crescer com método
               </a>
             </div>
           ) : null}

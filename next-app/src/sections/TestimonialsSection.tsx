@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
             <span className="text-[#38B549]">já deu o passo</span>
           </h2>
           <p className="text-slate-500 text-sm md:text-base max-w-xl mx-auto font-medium">
-            Diferentes perfis. Diferentes cidades. Um resultado em comum.
+            Ouça diretamente de quem abriu uma OdontoCompany e não voltou atrás.
           </p>
         </div>
 

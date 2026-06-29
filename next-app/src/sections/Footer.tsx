@@ -19,7 +19,8 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pt-6 text-[11px] text-white/85 w-full">
           <div className="footer-legal">
-            *Valores sujeitos ao mercado local e à atuação do franqueado.
+            *Valores referenciais baseados na média da rede. Resultados variam
+            conforme mercado, localização e gestão do franqueado.
             <br />
             Metodologia OdontoCompany Franchising · Todos os direitos reservados.
           </div>

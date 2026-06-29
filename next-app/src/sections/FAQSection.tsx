@@ -20,12 +20,13 @@ export default function FAQSection() {
               Tem dúvidas? <em>Temos as respostas.</em>
             </h2>
             <p className="section-sub">
-              Perguntas comuns de quem está avaliando o investimento.
+              Perguntas comuns de quem está avaliando o modelo de franquia para
+              dentistas.
             </p>
             <div className="faq-form-mini">
-              <div className="faq-form-mini-title">Ainda tem dúvidas?</div>
+              <div className="faq-form-mini-title">Ainda com dúvidas?</div>
               <p className="faq-form-mini-sub">
-                Fale diretamente com um consultor de expansão.
+                Fale diretamente com um consultor de expansão. Sem compromisso.
               </p>
               <button
                 className="form-submit"

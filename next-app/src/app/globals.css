@@ -3143,4 +3143,183 @@ section { position: relative; }
   .cta-section .section-kicker { margin-bottom: 47px; }
 }
 
+/* ===== MÉTODO (reusa .ben-card) ===== */
+.metodo-card-num {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--green-100);
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.04em;
+}
+
+/* ===== DOR SECTION (dentista) ===== */
+.dor-section {
+  background: var(--off-white);
+  padding: 96px 0;
+  overflow: hidden;
+}
+.dor-inner { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+.dor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+.dor-text .section-kicker { text-align: left; margin-bottom: 12px; }
+.dor-title { text-align: left; }
+.dor-sub {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--gray-600);
+  margin-bottom: 24px;
+}
+.dor-cta-quote {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-800);
+  font-style: italic;
+  line-height: 1.5;
+  border-left: 3px solid var(--green-500);
+  padding-left: 16px;
+  margin-top: 10px;
+}
+.dor-cta-quote strong { color: var(--green-900); }
+.dor-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  padding: 14px 30px;
+  color: #fff;
+  font-weight: 700;
+}
+.dor-cards { display: flex; flex-direction: column; gap: 12px; }
+.dor-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: 14px;
+  border: 1.5px solid var(--gray-200);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease,
+    opacity 0.6s ease, translate 0.6s ease;
+}
+.dor-card.fade-up-item { opacity: 0; translate: 0 28px; }
+.dor-card.is-visible { opacity: 1; translate: 0 0; }
+.dor-card:hover {
+  border-color: var(--green-300);
+  transform: translateX(6px);
+  box-shadow: 0 8px 24px rgba(56, 181, 73, 0.1);
+}
+.dor-card-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.dor-card-title { font-size: 14px; font-weight: 700; color: var(--gray-800); margin-bottom: 3px; }
+.dor-card-desc { font-size: 13px; color: var(--gray-600); line-height: 1.55; }
+.dor-card-quote { font-size: 12px; color: #b04020; font-style: italic; margin-top: 5px; font-weight: 500; }
+
+/* ===== VIRADA SECTION (dentista) ===== */
+.virada-section {
+  position: relative;
+  background: var(--green-900);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 60px 60px;
+  padding: 96px 0;
+  overflow: hidden;
+}
+.virada-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 75% 25%, rgba(56, 181, 73, 0.2), transparent),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(45, 114, 112, 0.15), transparent);
+  pointer-events: none;
+}
+.virada-inner { position: relative; z-index: 2; max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+.virada-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.virada-text .section-kicker { text-align: left; margin-bottom: 12px; }
+.virada-title { text-align: left; color: #fff; }
+.virada-title em { color: var(--lime); }
+.virada-sub {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 32px;
+}
+.virada-steps { display: flex; flex-direction: column; }
+.virada-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+.virada-step:last-child { border-bottom: none; }
+.virada-step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(56, 181, 73, 0.12);
+  border: 1px solid rgba(56, 181, 73, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--lime);
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+.virada-step:hover .virada-step-num {
+  background: var(--green-500);
+  border-color: var(--green-500);
+  color: #fff;
+  box-shadow: 0 0 16px rgba(56, 181, 73, 0.4);
+}
+.virada-step-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+.virada-step-desc { font-size: 13px; color: rgba(255, 255, 255, 0.48); line-height: 1.6; }
+.virada-img {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.virada-img-inner { text-align: center; padding: 32px; }
+.virada-img-icon { width: 64px; height: 64px; margin: 0 auto; }
+.virada-img-lbl {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.2);
+  margin-top: 16px;
+  font-style: italic;
+}
+
+@media (max-width: 860px) {
+  .dor-grid { grid-template-columns: 1fr; gap: 40px; }
+  .virada-grid { grid-template-columns: 1fr; gap: 40px; }
+  .virada-img { aspect-ratio: 16 / 10; }
+}
+
 

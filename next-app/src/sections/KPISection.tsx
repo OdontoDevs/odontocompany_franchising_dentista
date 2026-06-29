@@ -5,17 +5,23 @@ import React from "react";
 interface KpiCardProps {
   label: string;
   value: string;
+  hint?: string;
 }
 
-function KpiCard({ label, value }: KpiCardProps) {
+function KpiCard({ label, value, hint }: KpiCardProps) {
   return (
     <div className="kpi-mobile-card bg-white rounded-3xl p-8 text-center glow-card flex flex-col justify-center min-h-[160px] transition-transform duration-300 hover:scale-105">
-      <span className="text-slate-700 font-bold text-[11px] md:text-xs uppercase tracking-tight mb-2 leading-tight">
-        {label}
-      </span>
-      <span className="text-[var(--green-500)] text-3xl md:text-4xl font-extrabold whitespace-nowrap">
+      <span className="text-[var(--green-500)] text-3xl md:text-4xl font-extrabold whitespace-nowrap mb-2">
         {value}
       </span>
+      <span className="text-slate-700 font-bold text-[11px] md:text-xs uppercase tracking-tight leading-tight">
+        {label}
+      </span>
+      {hint ? (
+        <span className="text-slate-400 text-[11px] italic mt-1 leading-tight">
+          {hint}
+        </span>
+      ) : null}
     </div>
   );
 }
@@ -43,43 +49,43 @@ export default function KPISection() {
       <div className="max-w-6xl w-full mx-auto flex flex-col items-center gap-12">
         <div className="text-center space-y-4">
           <div className="section-kicker section-kicker--dark">
-            Sua futura franquia
+            Números que ajudam a decidir
           </div>
           <h2 className="text-white text-4xl md:text-5xl tracking-tight font-black leading-tight">
             Os números da <br />
-            <span className="text-[var(--lime)]">sua futura franquia</span>
+            <span className="text-[var(--lime)]">sua futura clínica</span>
           </h2>
           <p className="text-white/80 text-sm md:text-base max-w-2xl mx-auto font-medium">
-            Projeções baseadas na média da rede. Valores sujeitos ao mercado
-            local e à gestão do franqueado.
+            Projeções baseadas na média da rede. Para o dentista, o número não
+            deve vir sozinho — ele responde como o modelo ajuda a sair do
+            operacional e construir uma clínica mais profissionalizada.
           </p>
         </div>
 
         <div className="kpi-mobile-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-          <KpiCard label="FATURAMENTO MÉDIO POR ANO" value="R$ 1,4M" />
-          <KpiCard label="INVESTIMENTO INICIAL TOTAL" value="R$ 450k" />
-          <KpiCard label="LUCRATIVIDADE MÉDIA MENSAL" value="20-25%" />
-          <KpiCard label="PRAZO MÉDIO DE RETORNO" value="24 meses" />
+          <KpiCard
+            value="R$ 450k"
+            label="Investimento inicial"
+            hint="taxa + obra + equipamentos + giro"
+          />
+          <KpiCard
+            value="R$ 1,4M"
+            label="Faturamento médio/ano"
+            hint="R$ 60k a R$ 120k por mês"
+          />
+          <KpiCard
+            value="20–25%"
+            label="Lucratividade média"
+            hint="após maturação da unidade"
+          />
+          <KpiCard
+            value="24 meses"
+            label="Prazo médio de retorno"
+            hint="equilíbrio a partir do 6º mês"
+          />
         </div>
 
-        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 px-4 mx-auto mt-4">
-          <InfoItem
-            icon={
-              <svg
-                className="h-6 w-6"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
-              </svg>
-            }
-          >
-            <span className="font-bold text-white">Investimento inclui tudo:</span>{" "}
-            taxa de franquia, reforma do imóvel, equipamentos e capital de giro.
-          </InfoItem>
-
+        <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-3 gap-6 px-4 mx-auto mt-4">
           <InfoItem
             icon={
               <svg
@@ -98,31 +104,8 @@ export default function KPISection() {
               </svg>
             }
           >
-            <span className="font-bold text-white">
-              Ponto de equilíbrio a partir do 6º mês de operação
-            </span>
-          </InfoItem>
-
-          <InfoItem
-            icon={
-              <svg
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-10V4m-5 11h.01"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            }
-          >
-            <span className="font-bold text-white">Modelos de clínica</span>{" "}
-            para diferentes portes de cidade, médias e capitais.
+            Ponto de equilíbrio a partir do{" "}
+            <span className="font-bold text-white">6º mês</span> de operação.
           </InfoItem>
 
           <InfoItem
@@ -143,8 +126,33 @@ export default function KPISection() {
               </svg>
             }
           >
-            <span className="font-bold text-white">Alta recorrência de clientes</span>
-            , tratamentos geram retorno e fidelização natural.
+            <span className="font-bold text-white">60% dos franqueados</span>{" "}
+            possuem mais de uma unidade.
+          </InfoItem>
+
+          <InfoItem
+            icon={
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-10V4m-5 11h.01"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            }
+          >
+            Modelos para{" "}
+            <span className="font-bold text-white">
+              diferentes portes de cidade
+            </span>
+            , médias e capitais.
           </InfoItem>
         </div>
 
@@ -157,7 +165,7 @@ export default function KPISection() {
                 ?.scrollIntoView({ behavior: "smooth" })
             }
           >
-            Quero ser um franqueado
+            Quero crescer com método
           </button>
         </div>
       </div>
