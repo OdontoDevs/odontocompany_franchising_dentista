@@ -48,7 +48,7 @@ export default function HeroSection() {
             clínica em crescimento real. Você continua sendo dentista — mas passa
             a pensar como empresário.
           </p>
-          <div className="fade-in-soft delay-4 max-w-lg mt-6 hero-ctas">
+          <div className="max-w-lg mt-6 hero-ctas">
             <CtaFunnel />
           </div>
         </div>

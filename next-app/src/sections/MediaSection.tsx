@@ -1,5 +1,7 @@
 "use client";
 
+import { trackCtaClick } from "@/lib/tracking";
+
 export default function MediaSection() {
   return (
     <section className="media-section-redesign" id="midia">
@@ -40,9 +42,10 @@ export default function MediaSection() {
           </p>
           <button
             className="media-box-btn"
-            onClick={() =>
-              document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })
-            }
+            onClick={() => {
+              trackCtaClick("Quero crescer com método", "midia", "#cta");
+              document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Quero crescer com método
           </button>

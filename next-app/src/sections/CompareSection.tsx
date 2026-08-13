@@ -1,5 +1,7 @@
 "use client";
 
+import { trackCtaClick } from "@/lib/tracking";
+
 export default function CompareSection() {
   return (
     <section className="compare-section-new" id="comparativo">
@@ -91,7 +93,13 @@ export default function CompareSection() {
         </p>
 
         <div className="cmp-cta-area">
-          <a className="cmp-cta-btn group" href="#cta">
+          <a
+            className="cmp-cta-btn group"
+            href="#cta"
+            onClick={() =>
+              trackCtaClick("Simular meu investimento", "comparativo", "#cta")
+            }
+          >
             <span className="cmp-cta-shimmer group-hover:animate-shimmer" />
             <span className="cmp-cta-content">
               Simular meu investimento
