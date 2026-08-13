@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { trackCtaClick } from "@/lib/tracking";
 
 interface KpiCardProps {
   label: string;
@@ -159,11 +160,12 @@ export default function KPISection() {
         <div className="w-full flex justify-center mt-6">
           <button
             className="btn-solid-green normal-case text-white font-bold px-10 py-4 text-base"
-            onClick={() =>
+            onClick={() => {
+              trackCtaClick("Quero crescer com método", "numeros", "#cta");
               document
                 .getElementById("cta")
-                ?.scrollIntoView({ behavior: "smooth" })
-            }
+                ?.scrollIntoView({ behavior: "smooth" });
+            }}
           >
             Quero crescer com método
           </button>

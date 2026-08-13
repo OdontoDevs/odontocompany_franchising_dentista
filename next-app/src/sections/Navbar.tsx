@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackCtaClick } from "@/lib/tracking";
 
 const links = [
   { href: "#vantagens", label: "Vantagens" },
@@ -11,6 +12,10 @@ const links = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleCtaClick = (ctaText: string) => {
+    trackCtaClick(ctaText, "navbar", "#cta");
+  };
 
   return (
     <nav className="nav">
@@ -32,7 +37,11 @@ export default function Navbar() {
             ))}
           </div>
 
-          <a href="#cta" className="nav-cta">
+          <a
+            href="#cta"
+            className="nav-cta"
+            onClick={() => handleCtaClick("Quero crescer com método")}
+          >
             Quero crescer com método &rarr;
           </a>
 
@@ -64,7 +73,10 @@ export default function Navbar() {
               <a
                 className="nav-mobile-link nav-mobile-link--cta"
                 href="#cta"
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  handleCtaClick("Quero crescer com método");
+                  setIsOpen(false);
+                }}
               >
                 Quero crescer com método
               </a>

@@ -3,8 +3,9 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-import { videoItems, youtubeThumb, VideoKey } from "@/data/videos";
+import { videoItems, youtubeThumb, VideoKey, youtubeId } from "@/data/videos";
 import { Button } from "@/components/ui/button";
+import { trackVideoPlay } from "@/lib/tracking";
 import {
   Carousel,
   CarouselApi,
@@ -90,7 +91,13 @@ export default function VideoSection() {
                   ) : (
                     <button
                       type="button"
-                      onClick={() => setPlayingKey(item.key)}
+                      onClick={() => {
+                        trackVideoPlay(
+                          item.cardSubtitle,
+                          `https://www.youtube.com/watch?v=${youtubeId(item.embed)}`
+                        );
+                        setPlayingKey(item.key);
+                      }}
                       aria-label={`Reproduzir: ${item.cardSubtitle}`}
                       className="absolute inset-0 block cursor-pointer text-left"
                     >

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { trackCtaClick } from "@/lib/tracking";
 
 interface PainCard {
   emoji: string;
@@ -112,11 +113,16 @@ export default function DorSection() {
             </div>
             <button
               className="btn-solid-green dor-btn"
-              onClick={() =>
+              onClick={() => {
+                trackCtaClick(
+                  "Quero sair do operacional com método",
+                  "dor",
+                  "#cta"
+                );
                 document
                   .getElementById("cta")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+                  ?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               Quero sair do operacional com método
               <ArrowRight className="w-4 h-4" />

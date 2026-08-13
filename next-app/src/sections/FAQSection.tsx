@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { faqData } from "@/data/faq";
+import { trackCtaClick } from "@/lib/tracking";
 
 export default function FAQSection() {
   const [activeFaq, setActiveFaq] = useState<number | null>(0);
@@ -30,11 +31,16 @@ export default function FAQSection() {
               </p>
               <button
                 className="form-submit"
-                onClick={() =>
+                onClick={() => {
+                  trackCtaClick(
+                    "Falar com um consultor agora",
+                    "faq",
+                    "#cta"
+                  );
                   document
                     .getElementById("cta")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
               >
                 Falar com um consultor agora &rarr;
               </button>
