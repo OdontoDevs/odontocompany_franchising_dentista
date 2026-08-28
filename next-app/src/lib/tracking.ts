@@ -11,6 +11,11 @@ const CLICK_ID_KEYS = ["gclid", "fbclid", "wbraid", "gbraid", "msclkid"] as cons
 const ATTR_STORAGE_KEY = "oc_dentistas_attribution";
 const FROM_URL_KEY = "oc_dentistas_from_url";
 
+// Cookie do script nativo de rastreamento do RD Station, confirmado na documentação oficial
+// (https://developers.rdstation.com/reference/conversao): "Valor de um cookie '_rdtrk'."
+// Formato esperado é um UUID (ex: 43b00843-09af-4fae-bf9d-a0697640b808).
+const RD_TRACKING_COOKIE_NAME = "_rdtrk";
+
 export type UtmParams = Record<(typeof UTM_KEYS)[number], string>;
 export type ClickIdParams = Record<(typeof CLICK_ID_KEYS)[number], string>;
 
@@ -90,6 +95,45 @@ export function captureAttribution(): AttributionParams {
 
   sessionStorage.setItem(ATTR_STORAGE_KEY, JSON.stringify(next));
   return next;
+}
+
+/**
+ * Sem UTM, classifica a origem como "organico" (usando o domínio do referrer) quando existe
+ * um referrer externo, ou "direto" quando não há nenhuma pista de origem (acesso direto,
+ * favorito, ou referrer do próprio domínio).
+ */
+export function resolveTrafficSource(
+  utmSource: string,
+  utmMedium: string,
+  referrer: string
+): { source: string; medium: string } {
+  if (utmSource) {
+    return { source: utmSource, medium: utmMedium || "" };
+  }
+  if (!referrer) {
+    return { source: "direto", medium: "direto" };
+  }
+  try {
+    const referrerHost = new URL(referrer).hostname.replace(/^www\./, "");
+    const currentHost = typeof window !== "undefined" ? window.location.hostname : "";
+    if (referrerHost && referrerHost !== currentHost) {
+      return { source: referrerHost, medium: "organico" };
+    }
+  } catch {
+    // referrer malformado — cai no fallback abaixo
+  }
+  return { source: "direto", medium: "direto" };
+}
+
+function getCookie(name: string): string {
+  if (typeof document === "undefined") return "";
+  const match = document.cookie.match(new RegExp(`(?:^|; )${name}=([^;]*)`));
+  return match ? decodeURIComponent(match[1]) : "";
+}
+
+/** Lê o cookie do script nativo do RD Station, se o script estiver instalado. */
+export function getClientTrackingId(): string {
+  return getCookie(RD_TRACKING_COOKIE_NAME);
 }
 
 export function trackCtaClick(ctaText: string, ctaSection: string, ctaUrl = "#cta") {

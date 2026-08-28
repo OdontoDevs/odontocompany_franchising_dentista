@@ -66,8 +66,8 @@ export type RdLeadInput = {
   capitalInvestimento: string;
   eventId: string;
   trafficSource: string;
+  trafficMedium: string;
   utmSource?: string;
-  utmMedium?: string;
   utmCampaign?: string;
   utmContent?: string;
   utmTerm?: string;
@@ -76,9 +76,8 @@ export type RdLeadInput = {
   wbraid?: string;
   gbraid?: string;
   msclkid?: string;
-  pageUrl?: string;
-  fromUrl?: string;
-  referrer?: string;
+  conversionUrl?: string;
+  clientTrackingId?: string;
 };
 
 export type RdConversionResult = {
@@ -106,6 +105,17 @@ export async function sendConversionToRD(lead: RdLeadInput): Promise<RdConversio
         city: lead.cidadeInteresse,
         state: lead.estado,
         traffic_source: lead.trafficSource,
+        traffic_medium: lead.trafficMedium,
+        traffic_campaign: lead.utmCampaign || "",
+        traffic_term: lead.utmTerm || "",
+        traffic_value: lead.utmContent || "",
+        conversion_url: lead.conversionUrl || "",
+        client_tracking_id: lead.clientTrackingId || "",
+        gclid: lead.gclid || "",
+        fbclid: lead.fbclid || "",
+        wbraid: lead.wbraid || "",
+        gbraid: lead.gbraid || "",
+        msclkid: lead.msclkid || "",
         tags: LEAD_TAGS,
         cf_dentistas_especialidade: mapEspecialidade(lead.especialidade),
         cf_dentistas_anos_formado: lead.anosFormado,
@@ -114,11 +124,6 @@ export async function sendConversionToRD(lead: RdLeadInput): Promise<RdConversio
         cf_dentistas_possui_clinica: mapPossuiClinica(lead.possuiClinica),
         cf_dentistas_prazo_abertura_clinica: mapPrazo(lead.prazoAbertura),
         cf_dentistas_capital_investimento: mapCapital(lead.capitalInvestimento),
-        cf_utm_source: lead.utmSource || "",
-        cf_utm_medium: lead.utmMedium || "",
-        cf_utm_campaign: lead.utmCampaign || "",
-        cf_utm_content: lead.utmContent || "",
-        cf_utm_term: lead.utmTerm || "",
       },
     }),
   });

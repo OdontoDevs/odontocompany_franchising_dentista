@@ -20,7 +20,9 @@ import {
   UTM_KEYS,
   captureAttribution,
   createEventId,
+  getClientTrackingId,
   pushDataLayer,
+  resolveTrafficSource,
 } from "@/lib/tracking";
 import {
   mapCapital,
@@ -110,9 +112,17 @@ export default function CtaFunnel({ light = false }: { light?: boolean }) {
     for (const key of CLICK_ID_KEYS) {
       formData.append(key, currentAttribution[key]);
     }
+    const { source: trafficSource, medium: trafficMedium } = resolveTrafficSource(
+      currentAttribution.utm_source,
+      currentAttribution.utm_medium,
+      currentAttribution.referrer
+    );
+    formData.append("traffic_source", trafficSource);
+    formData.append("traffic_medium", trafficMedium);
     formData.append("page_url", currentAttribution.page_url);
     formData.append("from_url", currentAttribution.from_url);
     formData.append("referrer", currentAttribution.referrer);
+    formData.append("client_tracking_id", getClientTrackingId());
 
     const res = await submitCtaForm(formData);
     if (res.success) {
