@@ -71,6 +71,12 @@ export default function RootLayout({
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','${GTM_ID}');`}
         </Script>
+        {/* Script nativo de rastreamento do RD Station — gera o cookie _rdtrk usado como client_tracking_id */}
+        <Script
+          id="rd-station-tracking"
+          strategy="afterInteractive"
+          src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/54159491-bf1c-4952-844e-e6953d248069-loader.js"
+        />
       </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <noscript>

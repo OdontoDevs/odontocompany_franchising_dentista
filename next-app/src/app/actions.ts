@@ -15,18 +15,18 @@ export async function submitCtaForm(formData: FormData) {
   const capital = (formData.get("capital") as string) || "";
   const eventId = (formData.get("event_id") as string) || "";
   const utmSource = (formData.get("utm_source") as string) || "";
-  const utmMedium = (formData.get("utm_medium") as string) || "";
   const utmCampaign = (formData.get("utm_campaign") as string) || "";
   const utmContent = (formData.get("utm_content") as string) || "";
   const utmTerm = (formData.get("utm_term") as string) || "";
+  const trafficSource = (formData.get("traffic_source") as string) || "";
+  const trafficMedium = (formData.get("traffic_medium") as string) || "";
   const gclid = (formData.get("gclid") as string) || "";
   const fbclid = (formData.get("fbclid") as string) || "";
   const wbraid = (formData.get("wbraid") as string) || "";
   const gbraid = (formData.get("gbraid") as string) || "";
   const msclkid = (formData.get("msclkid") as string) || "";
-  const pageUrl = (formData.get("page_url") as string) || "";
-  const fromUrl = (formData.get("from_url") as string) || "";
-  const referrer = (formData.get("referrer") as string) || "";
+  const conversionUrl = (formData.get("page_url") as string) || "";
+  const clientTrackingId = (formData.get("client_tracking_id") as string) || "";
 
   if (
     !name ||
@@ -57,9 +57,9 @@ export async function submitCtaForm(formData: FormData) {
       prazoAbertura: prazo,
       capitalInvestimento: capital,
       eventId,
-      trafficSource: utmSource || "site",
+      trafficSource: trafficSource || "direto",
+      trafficMedium: trafficMedium || "direto",
       utmSource,
-      utmMedium,
       utmCampaign,
       utmContent,
       utmTerm,
@@ -68,9 +68,8 @@ export async function submitCtaForm(formData: FormData) {
       wbraid,
       gbraid,
       msclkid,
-      pageUrl,
-      fromUrl,
-      referrer,
+      conversionUrl,
+      clientTrackingId,
     });
     leadId = result.leadId;
   } catch (error) {
